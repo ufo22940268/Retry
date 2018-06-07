@@ -15,6 +15,8 @@
 		42DA4DB720C8C86F002D161F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42DA4DB520C8C86F002D161F /* LaunchScreen.storyboard */; };
 		42DA4DC220C8C86F002D161F /* ImageCrawlerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DA4DC120C8C86F002D161F /* ImageCrawlerTests.swift */; };
 		42DA4DCD20C8C86F002D161F /* ImageCrawlerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DA4DCC20C8C86F002D161F /* ImageCrawlerUITests.swift */; };
+		42DA4DDC20C8CA13002D161F /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DA4DDB20C8CA13002D161F /* Kingfisher.framework */; };
+		42DA4DE020C8D17C002D161F /* RequestImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DA4DDF20C8D17C002D161F /* RequestImageCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		42DA4DC820C8C86F002D161F /* ImageCrawlerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageCrawlerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		42DA4DCC20C8C86F002D161F /* ImageCrawlerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCrawlerUITests.swift; sourceTree = "<group>"; };
 		42DA4DCE20C8C86F002D161F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42DA4DDB20C8CA13002D161F /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
+		42DA4DDF20C8D17C002D161F /* RequestImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestImageCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42DA4DDC20C8CA13002D161F /* Kingfisher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +88,7 @@
 				42DA4DC020C8C86F002D161F /* ImageCrawlerTests */,
 				42DA4DCB20C8C86F002D161F /* ImageCrawlerUITests */,
 				42DA4DA820C8C86E002D161F /* Products */,
+				42DA4DDA20C8CA13002D161F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,6 +112,7 @@
 				42DA4DB320C8C86F002D161F /* Assets.xcassets */,
 				42DA4DB520C8C86F002D161F /* LaunchScreen.storyboard */,
 				42DA4DB820C8C86F002D161F /* Info.plist */,
+				42DA4DDF20C8D17C002D161F /* RequestImageCell.swift */,
 			);
 			path = ImageCrawler;
 			sourceTree = "<group>";
@@ -128,6 +135,14 @@
 			path = ImageCrawlerUITests;
 			sourceTree = "<group>";
 		};
+		42DA4DDA20C8CA13002D161F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				42DA4DDB20C8CA13002D161F /* Kingfisher.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,6 +153,7 @@
 				42DA4DA320C8C86E002D161F /* Sources */,
 				42DA4DA420C8C86E002D161F /* Frameworks */,
 				42DA4DA520C8C86E002D161F /* Resources */,
+				42DA4DDD20C8CA3E002D161F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -254,12 +270,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		42DA4DDD20C8CA3E002D161F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Kingfisher.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		42DA4DA320C8C86E002D161F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				42DA4DAF20C8C86E002D161F /* SecondViewController.swift in Sources */,
+				42DA4DE020C8D17C002D161F /* RequestImageCell.swift in Sources */,
 				42DA4DAB20C8C86E002D161F /* AppDelegate.swift in Sources */,
 				42DA4DAD20C8C86E002D161F /* FirstViewController.swift in Sources */,
 			);
@@ -435,6 +470,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ImageCrawler/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -452,6 +491,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ImageCrawler/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
