@@ -8,6 +8,7 @@
 
 import UIKit
 import Kingfisher
+import NetworkExtension
 
 class FirstViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
     
@@ -24,6 +25,13 @@ class FirstViewController: UIViewController, UICollectionViewDataSource, UIColle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        let targetManager = NEVPNManager.shared()
+//        targetManager.isEnabled = true
+//        do {
+//            try targetManager.connection.startVPNTunnel()
+//        } catch {
+//            print(error)
+//        }
     }
 
     override func didReceiveMemoryWarning() {

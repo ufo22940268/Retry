@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4222EAD020CF9871000967CC /* PacketTunnelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4222EACF20CF9871000967CC /* PacketTunnelProvider.swift */; };
+		4222EAD520CF9871000967CC /* PacketTunnel.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4222EACD20CF9871000967CC /* PacketTunnel.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4222EADA20CF988A000967CC /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42EB235120CA2F1F00994F74 /* NetworkExtension.framework */; };
 		42DA4DAB20C8C86E002D161F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DA4DAA20C8C86E002D161F /* AppDelegate.swift */; };
 		42DA4DAD20C8C86E002D161F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DA4DAC20C8C86E002D161F /* FirstViewController.swift */; };
 		42DA4DAF20C8C86E002D161F /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DA4DAE20C8C86E002D161F /* SecondViewController.swift */; };
@@ -17,9 +20,18 @@
 		42DA4DCD20C8C86F002D161F /* ImageCrawlerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DA4DCC20C8C86F002D161F /* ImageCrawlerUITests.swift */; };
 		42DA4DDC20C8CA13002D161F /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42DA4DDB20C8CA13002D161F /* Kingfisher.framework */; };
 		42DA4DE020C8D17C002D161F /* RequestImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DA4DDF20C8D17C002D161F /* RequestImageCell.swift */; };
+		42EB235220CA2F1F00994F74 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42EB235120CA2F1F00994F74 /* NetworkExtension.framework */; };
+		42EB235520CAB92F00994F74 /* Switch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42EB235420CAB92F00994F74 /* Switch.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		4222EAD320CF9871000967CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 42DA4D9F20C8C86E002D161F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4222EACC20CF9871000967CC;
+			remoteInfo = PacketTunnel;
+		};
 		42DA4DBE20C8C86F002D161F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 42DA4D9F20C8C86E002D161F /* Project object */;
@@ -36,7 +48,25 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		4222EAD920CF9871000967CC /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				4222EAD520CF9871000967CC /* PacketTunnel.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		4222EACD20CF9871000967CC /* PacketTunnel.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PacketTunnel.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		4222EACF20CF9871000967CC /* PacketTunnelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacketTunnelProvider.swift; sourceTree = "<group>"; };
+		4222EAD120CF9871000967CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4222EAD220CF9871000967CC /* PacketTunnel.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PacketTunnel.entitlements; sourceTree = "<group>"; };
 		42DA4DA720C8C86E002D161F /* ImageCrawler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageCrawler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42DA4DAA20C8C86E002D161F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42DA4DAC20C8C86E002D161F /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -53,14 +83,27 @@
 		42DA4DCE20C8C86F002D161F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42DA4DDB20C8CA13002D161F /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 		42DA4DDF20C8D17C002D161F /* RequestImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestImageCell.swift; sourceTree = "<group>"; };
+		42EB235120CA2F1F00994F74 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
+		42EB235320CA2F1F00994F74 /* ImageCrawler.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ImageCrawler.entitlements; sourceTree = "<group>"; };
+		42EB235420CAB92F00994F74 /* Switch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Switch.framework; path = Carthage/Build/iOS/Switch.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4222EACA20CF9871000967CC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4222EADA20CF988A000967CC /* NetworkExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		42DA4DA420C8C86E002D161F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42EB235520CAB92F00994F74 /* Switch.framework in Frameworks */,
 				42DA4DDC20C8CA13002D161F /* Kingfisher.framework in Frameworks */,
+				42EB235220CA2F1F00994F74 /* NetworkExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,12 +124,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4222EACE20CF9871000967CC /* PacketTunnel */ = {
+			isa = PBXGroup;
+			children = (
+				4222EACF20CF9871000967CC /* PacketTunnelProvider.swift */,
+				4222EAD120CF9871000967CC /* Info.plist */,
+				4222EAD220CF9871000967CC /* PacketTunnel.entitlements */,
+			);
+			path = PacketTunnel;
+			sourceTree = "<group>";
+		};
 		42DA4D9E20C8C86E002D161F = {
 			isa = PBXGroup;
 			children = (
 				42DA4DA920C8C86E002D161F /* ImageCrawler */,
 				42DA4DC020C8C86F002D161F /* ImageCrawlerTests */,
 				42DA4DCB20C8C86F002D161F /* ImageCrawlerUITests */,
+				4222EACE20CF9871000967CC /* PacketTunnel */,
 				42DA4DA820C8C86E002D161F /* Products */,
 				42DA4DDA20C8CA13002D161F /* Frameworks */,
 			);
@@ -98,6 +152,7 @@
 				42DA4DA720C8C86E002D161F /* ImageCrawler.app */,
 				42DA4DBD20C8C86F002D161F /* ImageCrawlerTests.xctest */,
 				42DA4DC820C8C86F002D161F /* ImageCrawlerUITests.xctest */,
+				4222EACD20CF9871000967CC /* PacketTunnel.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -105,6 +160,7 @@
 		42DA4DA920C8C86E002D161F /* ImageCrawler */ = {
 			isa = PBXGroup;
 			children = (
+				42EB235320CA2F1F00994F74 /* ImageCrawler.entitlements */,
 				42DA4DAA20C8C86E002D161F /* AppDelegate.swift */,
 				42DA4DAC20C8C86E002D161F /* FirstViewController.swift */,
 				42DA4DAE20C8C86E002D161F /* SecondViewController.swift */,
@@ -138,6 +194,8 @@
 		42DA4DDA20C8CA13002D161F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				42EB235420CAB92F00994F74 /* Switch.framework */,
+				42EB235120CA2F1F00994F74 /* NetworkExtension.framework */,
 				42DA4DDB20C8CA13002D161F /* Kingfisher.framework */,
 			);
 			name = Frameworks;
@@ -146,6 +204,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		4222EACC20CF9871000967CC /* PacketTunnel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4222EAD620CF9871000967CC /* Build configuration list for PBXNativeTarget "PacketTunnel" */;
+			buildPhases = (
+				4222EAC920CF9871000967CC /* Sources */,
+				4222EACA20CF9871000967CC /* Frameworks */,
+				4222EACB20CF9871000967CC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PacketTunnel;
+			productName = PacketTunnel;
+			productReference = 4222EACD20CF9871000967CC /* PacketTunnel.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		42DA4DA620C8C86E002D161F /* ImageCrawler */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 42DA4DD120C8C86F002D161F /* Build configuration list for PBXNativeTarget "ImageCrawler" */;
@@ -154,10 +229,12 @@
 				42DA4DA420C8C86E002D161F /* Frameworks */,
 				42DA4DA520C8C86E002D161F /* Resources */,
 				42DA4DDD20C8CA3E002D161F /* ShellScript */,
+				4222EAD920CF9871000967CC /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				4222EAD420CF9871000967CC /* PBXTargetDependency */,
 			);
 			name = ImageCrawler;
 			productName = ImageCrawler;
@@ -210,8 +287,27 @@
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Frank Cheng";
 				TargetAttributes = {
+					4222EACC20CF9871000967CC = {
+						CreatedOnToolsVersion = 9.4;
+						SystemCapabilities = {
+							com.apple.NetworkExtensions.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					42DA4DA620C8C86E002D161F = {
 						CreatedOnToolsVersion = 9.4;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.NetworkExtensions.iOS = {
+								enabled = 1;
+							};
+							com.apple.VPNLite = {
+								enabled = 1;
+							};
+						};
 					};
 					42DA4DBC20C8C86F002D161F = {
 						CreatedOnToolsVersion = 9.4;
@@ -239,11 +335,19 @@
 				42DA4DA620C8C86E002D161F /* ImageCrawler */,
 				42DA4DBC20C8C86F002D161F /* ImageCrawlerTests */,
 				42DA4DC720C8C86F002D161F /* ImageCrawlerUITests */,
+				4222EACC20CF9871000967CC /* PacketTunnel */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4222EACB20CF9871000967CC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		42DA4DA520C8C86E002D161F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -278,9 +382,11 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Switch.framework",
 			);
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Kingfisher.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Switch.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -289,6 +395,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4222EAC920CF9871000967CC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4222EAD020CF9871000967CC /* PacketTunnelProvider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		42DA4DA320C8C86E002D161F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -319,6 +433,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		4222EAD420CF9871000967CC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4222EACC20CF9871000967CC /* PacketTunnel */;
+			targetProxy = 4222EAD320CF9871000967CC /* PBXContainerItemProxy */;
+		};
 		42DA4DBF20C8C86F002D161F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 42DA4DA620C8C86E002D161F /* ImageCrawler */;
@@ -351,6 +470,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		4222EAD720CF9871000967CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = PacketTunnel/PacketTunnel.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S833P2K5YV;
+				INFOPLIST_FILE = PacketTunnel/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = bettycc.com.ImageCrawler.PacketTunnel;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4222EAD820CF9871000967CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = PacketTunnel/PacketTunnel.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S833P2K5YV;
+				INFOPLIST_FILE = PacketTunnel/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = bettycc.com.ImageCrawler.PacketTunnel;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		42DA4DCF20C8C86F002D161F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -468,8 +627,11 @@
 		42DA4DD220C8C86F002D161F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
+				CODE_SIGN_ENTITLEMENTS = ImageCrawler/ImageCrawler.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S833P2K5YV;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -489,8 +651,11 @@
 		42DA4DD320C8C86F002D161F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
+				CODE_SIGN_ENTITLEMENTS = ImageCrawler/ImageCrawler.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = S833P2K5YV;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -588,6 +753,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4222EAD620CF9871000967CC /* Build configuration list for PBXNativeTarget "PacketTunnel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4222EAD720CF9871000967CC /* Debug */,
+				4222EAD820CF9871000967CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		42DA4DA220C8C86E002D161F /* Build configuration list for PBXProject "ImageCrawler" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
