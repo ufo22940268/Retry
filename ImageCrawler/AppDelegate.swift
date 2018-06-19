@@ -11,6 +11,7 @@ import Switch
 import NetworkExtension
 import NEKit
 import CocoaLumberjackSwift
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -31,11 +32,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         try! server!.start()
         
-//        let port = NEKit.Port(port: UInt16(9091))
-//        socks5Proxy = GCDSOCKS5ProxyServer(address: nil, port: port)
-        // swiftlint:disable force_try
+//        tryRealm()
+        
         return true
     }
+    
+
+//    func tryRealm() {
+//        let requestRecord = RequestRecord()
+//        requestRecord.tunnelId = "123"
+//        let realm = try! Realm()
+//
+//        try! realm.write {
+//            realm.add(requestRecord)
+//        }
+//        let requests = realm.objects(RequestRecord.self)
+//        print(requests.count)
+//    }
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

@@ -9,37 +9,39 @@
 import NEKit
 import Foundation
 import CocoaLumberjackSwift
+import RealmSwift
 
 class ServerObserverFactory : DebugObserverFactory {
-    override func getObserverForProxyServer(_ server: ProxyServer) -> Observer<ProxyServerEvent>? {
-        return HttpProxyServerObserver()
-    }
     
     override func getObserverForTunnel(_ tunnel: Tunnel) -> Observer<TunnelEvent>? {
         return TunnelObserver()
     }
 }
 
-open class HttpProxyServerObserver: Observer<ProxyServerEvent> {
-    override open func signal(_ event: ProxyServerEvent) {
-        switch event {
-        case .started,
-             .stopped:
-            DDLogInfo("\(event)")
-        case .newSocketAccepted(let socket, let onServer):
-            DDLogInfo("\(event)")
-        case .tunnelClosed(let tunnel, let onServer):
-            DDLogInfo("\(event) tunnel: \(tunnel)")
-        }
-    }
-}
 
 open class TunnelObserver: Observer<TunnelEvent> {
     open override func signal(_ event: TunnelEvent) {
         switch event {
-        case .proxySocketReadData(let data, _, _):
+        case .proxySocketReadData(let data, let socket, let tunnel):
             let str = String(data: data,  encoding: .utf8)
-            DDLogInfo("--------------\(str!)")
+            let record = RequestRecord()
+            record.tunnelId = socket.hashValue.description
+            
+            if let headerArray = str?.split(separator: "\r\n") {
+                for s in headerArray {
+                    record.headers.append(String(s))
+                }
+            }
+            
+            let realm =  try! Realm()
+            let records = realm.objects(RequestRecord.self)
+            try! realm.write {
+                realm.add(record)
+            }
+            
+            print(records)
+            
+            DDLogInfo("--------------\(str!)-----\(socket.hashValue)")
         case .closeCalled,
              .opened,
              .connectedToRemote,
@@ -52,7 +54,6 @@ open class TunnelObserver: Observer<TunnelEvent> {
              .adapterSocketWroteData,
              .closed:
             DDLogDebug("\(event)")
-
         }
     }
 }
