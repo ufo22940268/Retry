@@ -7,15 +7,33 @@
 //
 
 import UIKit
+import Switch
+import NetworkExtension
+import NEKit
+import CocoaLumberjackSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var server:GCDHTTPProxyServer?
+    var socks5Proxy:GCDSOCKS5ProxyServer?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        DDLog.removeAllLoggers()
+        DDLog.add(DDTTYLogger.sharedInstance, with: .info)
+        
+        ObserverFactory.currentFactory = ServerObserverFactory()
+        
+        server = GCDHTTPProxyServer(address: nil, port: NEKit.Port(port: UInt16(9090)))
+        // swiftlint:disable force_try
+        
+        try! server!.start()
+        
+//        let port = NEKit.Port(port: UInt16(9091))
+//        socks5Proxy = GCDSOCKS5ProxyServer(address: nil, port: port)
+        // swiftlint:disable force_try
         return true
     }
 
@@ -36,11 +54,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
+    
+    func applicationDidFinishLaunching(_ application: UIApplication) {
+
+    }
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        server?.stop()
+        socks5Proxy?.stop()
     }
-
 
 }
 
