@@ -13,16 +13,24 @@ import RealmSwift
 
 class ServerObserverFactory : DebugObserverFactory {
     
-    override func getObserverForTunnel(_ tunnel: Tunnel) -> Observer<TunnelEvent>? {
-        return TunnelObserver()
+    override func getObserverForProxySocket(_ socket: ProxySocket) -> Observer<ProxySocketEvent>? {
+        return ProxySocketObserver()
     }
 }
 
-
-open class TunnelObserver: Observer<TunnelEvent> {
-    open override func signal(_ event: TunnelEvent) {
+class ProxySocketObserver: Observer<ProxySocketEvent> {
+    override func signal(_ event: ProxySocketEvent) {
         switch event {
-        case .proxySocketReadData(let data, let socket, let tunnel):
+        case .errorOccured:
+            DDLogError("\(event)")
+        case .disconnected,
+             .receivedRequest:
+            DDLogInfo("\(event)")
+        case .socketOpened,
+             .askedToResponseTo,
+             .readyForForward:
+            DDLogVerbose("\(event)")
+        case .readData(let data, let socket):
             let str = String(data: data,  encoding: .utf8)
             let record = RequestRecord()
             record.tunnelId = socket.hashValue.description
@@ -39,20 +47,11 @@ open class TunnelObserver: Observer<TunnelEvent> {
                 realm.add(record)
             }
             
-            print(records)
-            
-            DDLogInfo("--------------\(str!)-----\(socket.hashValue)")
-        case .closeCalled,
-             .opened,
-             .connectedToRemote,
-             .updatingAdapterSocket,
-             .receivedRequest,
-             .forceCloseCalled,
-             .receivedReadySignal,
-             .proxySocketWroteData,
-             .adapterSocketReadData,
-             .adapterSocketWroteData,
-             .closed:
+            let httpSocket = socket as! HTTPProxySocket
+            DDLogInfo("--------------\(str!)-----\(socket.hashValue)--------------\(httpSocket.readStatusDescription)")
+        case .disconnectCalled,
+             .forceDisconnectCalled,
+             .wroteData:
             DDLogDebug("\(event)")
         }
     }
