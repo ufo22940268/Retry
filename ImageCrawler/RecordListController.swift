@@ -7,31 +7,34 @@
 //
 
 import UIKit
-import Kingfisher
 import NetworkExtension
+import RealmSwift
 
-class FirstViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
+class RecordListController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
+    
+    var records: Results<RequestRecord>?
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        if let count = records?.count {
+            return count
+        }  else {
+            return 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! RequestImageCell
-        cell.image.kf.setImage(with: URL(string: "https://assets.materialup.com/uploads/a21b79fc-ec9b-4365-93aa-26dc28de0593/teaser.png"))
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! RequestCell
+        let record = records?[indexPath.item]
+        cell.url.text = record?.headers.first
         cell.layer.borderWidth = 10
         return cell
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let targetManager = NEVPNManager.shared()
-//        targetManager.isEnabled = true
-//        do {
-//            try targetManager.connection.startVPNTunnel()
-//        } catch {
-//            print(error)
-//        }
+        
+        let realm = try! Realm()
+        records = realm.objects(RequestRecord.self)
     }
 
     override func didReceiveMemoryWarning() {

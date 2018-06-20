@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RequestImageCell: UICollectionViewCell {
+class RequestCell: UICollectionViewCell {
     
-    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var url: UILabel!
 }

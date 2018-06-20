@@ -31,14 +31,22 @@ class ProxySocketObserver: Observer<ProxySocketEvent> {
              .readyForForward:
             DDLogVerbose("\(event)")
         case .readData(let data, let socket):
-            let str = String(data: data,  encoding: .utf8)
+            let dataString = String(data: data,  encoding: .utf8)
             let record = RequestRecord()
             record.tunnelId = socket.hashValue.description
             
-            if let headerArray = str?.split(separator: "\r\n") {
-                for s in headerArray {
-                    record.headers.append(String(s))
+
+            
+      
+            let httpSocket = socket as! HTTPProxySocket
+            if (httpSocket.readStatusDescription == "reading first header") {
+                if let headerArray = dataString?.split(separator: "\r\n") {
+                    for s in headerArray {
+                        record.headers.append(String(s))
+                    }
                 }
+            } else if (httpSocket.readStatusDescription == "reading content (forwarding)") {
+                record.payload = dataString
             }
             
             let realm =  try! Realm()
@@ -47,8 +55,8 @@ class ProxySocketObserver: Observer<ProxySocketEvent> {
                 realm.add(record)
             }
             
-            let httpSocket = socket as! HTTPProxySocket
-            DDLogInfo("--------------\(str!)-----\(socket.hashValue)--------------\(httpSocket.readStatusDescription)")
+          
+            DDLogInfo("--------------\(dataString!)-----\(socket.hashValue)--------------\(httpSocket.readStatusDescription)")
         case .disconnectCalled,
              .forceDisconnectCalled,
              .wroteData:
