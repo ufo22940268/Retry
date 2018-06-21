@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Record-->
+        <!--请求记录-->
         <scene sceneID="ggo-QE-6ut">
             <objects>
-                <tableViewController title="Record" id="sAH-hh-xfr" customClass="RecordController" customModule="ImageCrawler" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="请求记录" id="sAH-hh-xfr" customClass="RecordController" customModule="ImageCrawler" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="1" rowHeight="-1" estimatedRowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" id="nn4-Py-mkp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -60,7 +60,7 @@
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="sAH-hh-xfr" id="Oqy-eR-ETZ"/>
-                            <outlet property="delegate" destination="sAH-hh-xfr" id="0OB-Sl-U1w"/>
+                            <outlet property="delegate" destination="sAH-hh-xfr" id="mcf-oN-N9N"/>
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Record" largeContentSizeImage="first" id="FI8-BB-zxh"/>
@@ -71,12 +71,58 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N5H-1V-1lg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="749.60000000000002" y="-881.10944527736137"/>
+            <point key="canvasLocation" x="750" y="-884"/>
         </scene>
-        <!--Second-->
+        <!--Detail Controller-->
+        <scene sceneID="P6q-Xe-ebW">
+            <objects>
+                <tableViewController storyboardIdentifier="DetailController" id="cs2-kk-OSb" customClass="DetailController" customModule="ImageCrawler" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="iPp-0V-Vl5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="contenta" id="zyy-bz-PND" customClass="DetailContentCell" customModule="ImageCrawler" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zyy-bz-PND" id="xaQ-Y4-LGy">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFQ-d8-HqU">
+                                            <rect key="frame" x="20" y="8" width="355" height="27.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                            <string key="userLabel">ios - What are the differences between Restoration ID and identifier to ... https://stackoverflow.com/.../what...restoration-id...identifier.../37107989 翻译此页 2 个回答 2016年5月9日 - Restoration IDs are used for state restoration, i.e. making your view look like it did when you quit the app-often used for re-creating objects. restorationIdentifier - UIViewController | Apple Developer ... https://developer.apple.com/documentation/.../1621499-restorationidentifier 翻译此页 When it asks for a specific view controller, UIKit provides your app with this restoration identifier and the restoration identifiers of any parent view controllers in ...</string>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="dFQ-d8-HqU" secondAttribute="trailing" id="FIT-bk-AY0"/>
+                                        <constraint firstAttribute="bottom" secondItem="dFQ-d8-HqU" secondAttribute="bottom" constant="8" id="Kmi-8t-TpK"/>
+                                        <constraint firstItem="dFQ-d8-HqU" firstAttribute="top" secondItem="xaQ-Y4-LGy" secondAttribute="top" constant="8" id="Uoy-gz-XXW"/>
+                                        <constraint firstItem="dFQ-d8-HqU" firstAttribute="leading" secondItem="xaQ-Y4-LGy" secondAttribute="leading" constant="20" id="woh-Lm-Xds"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="content" destination="dFQ-d8-HqU" id="CNg-Yo-LOo"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="cs2-kk-OSb" id="IVf-x3-IiT"/>
+                            <outlet property="delegate" destination="cs2-kk-OSb" id="RuN-nw-7s8"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="keS-Mz-Sjn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1582" y="-883"/>
+        </scene>
+        <!--开关-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
-                <viewController id="8rJ-Kc-sve" customClass="SwitchViewController" customModule="ImageCrawler" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="开关" id="8rJ-Kc-sve" customClass="SwitchViewController" customModule="ImageCrawler" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

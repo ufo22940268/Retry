@@ -75,14 +75,18 @@ class RecordController: UITableViewController {
             formatter.dateFormat = "aaa hh:mm:ss"
             formatter.amSymbol = "上午"
             formatter.pmSymbol = "下午"
-            cell.date.text = formatter.string(from:record.date!)            
+            cell.date.text = formatter.string(from:record.date!)
         }
-        
-
         
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath)
+        let detailController = storyboard?.instantiateViewController(withIdentifier: "DetailController") as! DetailController
+        detailController.record = records?[indexPath.row]
+        self.navigationController?.pushViewController(detailController, animated: true)
+    }
 
     deinit {
         token?.invalidate()

@@ -19,6 +19,8 @@
 		4269365020D9259100EAB106 /* NEKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 421EB70F20D8966700B05640 /* NEKit.framework */; };
 		4269365120D9259100EAB106 /* NEKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 421EB70F20D8966700B05640 /* NEKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		428CF3BB20DB4CC6009D90A2 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428CF3BA20DB4CC6009D90A2 /* HomeController.swift */; };
+		428CF3C120DB90F8009D90A2 /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428CF3C020DB90F8009D90A2 /* DetailController.swift */; };
+		428CF3C420DB97A1009D90A2 /* DetailContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428CF3C320DB97A1009D90A2 /* DetailContentCell.swift */; };
 		428EA60020D8D734000710DF /* CocoaLumberjackSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 428EA5FF20D8D734000710DF /* CocoaLumberjackSwift.framework */; };
 		428EA60120D8D734000710DF /* CocoaLumberjackSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 428EA5FF20D8D734000710DF /* CocoaLumberjackSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		428EA60420D8D752000710DF /* CocoaLumberjack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 428EA60320D8D751000710DF /* CocoaLumberjack.framework */; };
@@ -162,6 +164,8 @@
 		4222EAD220CF9871000967CC /* PacketTunnel.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PacketTunnel.entitlements; sourceTree = "<group>"; };
 		42427FFB20D39AF30053FA82 /* ServerObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerObserver.swift; sourceTree = "<group>"; };
 		428CF3BA20DB4CC6009D90A2 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		428CF3C020DB90F8009D90A2 /* DetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
+		428CF3C320DB97A1009D90A2 /* DetailContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContentCell.swift; sourceTree = "<group>"; };
 		428EA5FF20D8D734000710DF /* CocoaLumberjackSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CocoaLumberjackSwift.framework; sourceTree = "<group>"; };
 		428EA60320D8D751000710DF /* CocoaLumberjack.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CocoaLumberjack.framework; sourceTree = "<group>"; };
 		428EA61420D8D805000710DF /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CocoaAsyncSocket.framework; sourceTree = "<group>"; };
@@ -269,6 +273,14 @@
 			path = PacketTunnel;
 			sourceTree = "<group>";
 		};
+		428CF3C220DB9780009D90A2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				428CF3C320DB97A1009D90A2 /* DetailContentCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		42DA4D9E20C8C86E002D161F = {
 			isa = PBXGroup;
 			children = (
@@ -298,6 +310,7 @@
 		42DA4DA920C8C86E002D161F /* ImageCrawler */ = {
 			isa = PBXGroup;
 			children = (
+				428CF3C220DB9780009D90A2 /* Views */,
 				421EB72C20D8D24F00B05640 /* model */,
 				42EB235320CA2F1F00994F74 /* ImageCrawler.entitlements */,
 				42DA4DAA20C8C86E002D161F /* AppDelegate.swift */,
@@ -310,6 +323,7 @@
 				420446AE20DA3F6300ABDF31 /* RecordController.swift */,
 				420446B020DA45A800ABDF31 /* RecordCell.swift */,
 				428CF3BA20DB4CC6009D90A2 /* HomeController.swift */,
+				428CF3C020DB90F8009D90A2 /* DetailController.swift */,
 			);
 			path = ImageCrawler;
 			sourceTree = "<group>";
@@ -608,7 +622,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				428CF3C120DB90F8009D90A2 /* DetailController.swift in Sources */,
 				42DA4DAF20C8C86E002D161F /* SecondViewController.swift in Sources */,
+				428CF3C420DB97A1009D90A2 /* DetailContentCell.swift in Sources */,
 				420446AF20DA3F6300ABDF31 /* RecordController.swift in Sources */,
 				428CF3BB20DB4CC6009D90A2 /* HomeController.swift in Sources */,
 				42DA4DAB20C8C86E002D161F /* AppDelegate.swift in Sources */,
