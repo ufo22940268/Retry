@@ -11,6 +11,6 @@ import RealmSwift
 
 class RequestRecord: Object {
     @objc dynamic var tunnelId: String? = nil
-    let headers: List<String> = List<String>()
+    let headers = List<String>()
     @objc dynamic var payload: String? = nil
 }
