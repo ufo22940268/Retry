@@ -19,6 +19,8 @@ class ServerObserverFactory : DebugObserverFactory {
 }
 
 class ProxySocketObserver: Observer<ProxySocketEvent> {
+    let realm =  try! Realm()
+    
     override func signal(_ event: ProxySocketEvent) {
         switch event {
         case .errorOccured:
@@ -32,31 +34,28 @@ class ProxySocketObserver: Observer<ProxySocketEvent> {
             DDLogVerbose("\(event)")
         case .readData(let data, let socket):
             let dataString = String(data: data,  encoding: .utf8)
-            let record = RequestRecord()
-            record.tunnelId = socket.hashValue.description
             
-
+            let socketId = socket.hashValue.description
             
-      
-            let httpSocket = socket as! HTTPProxySocket
-            if (httpSocket.readStatusDescription == "reading first header") {
-                if let headerArray = dataString?.split(separator: "\r\n") {
-                    for s in headerArray {
-                        record.headers.append(String(s))
-                    }
-                }
-            } else if (httpSocket.readStatusDescription == "reading content (forwarding)") {
-                record.payload = dataString
-            }
-            
-            let realm =  try! Realm()
-            let records = realm.objects(RequestRecord.self)
+            var record = realm.objects(RequestRecord.self).filter("socketId = '\(socketId)'").first ?? RequestRecord()
             try! realm.write {
+                record.socketId = socketId
+                
+                let httpSocket = socket as! HTTPProxySocket
+                if (httpSocket.readStatusDescription == "reading first header") {
+                    if let headerArray = dataString?.split(separator: "\r\n") {
+                        for s in headerArray {
+                            record.headers.append(String(s))
+                        }
+                    }
+                } else if (httpSocket.readStatusDescription == "reading content (forwarding)") {
+                    record.payload = dataString
+                }
+                
                 realm.add(record)
             }
             
-          
-            DDLogInfo("--------------\(dataString!)-----\(socket.hashValue)--------------\(httpSocket.readStatusDescription)")
+            DDLogInfo("--------------\(dataString!)-----\(socket.hashValue)--------------")
         case .disconnectCalled,
              .forceDisconnectCalled,
              .wroteData:

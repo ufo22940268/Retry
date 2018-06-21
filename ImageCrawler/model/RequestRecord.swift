@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 class RequestRecord: Object {
-    @objc dynamic var tunnelId: String? = nil
+    @objc dynamic var socketId: String? = nil
     let headers = List<String>()
     @objc dynamic var payload: String? = nil
     @objc dynamic var date: Date? = Date()

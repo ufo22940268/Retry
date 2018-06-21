@@ -47,6 +47,8 @@ class DetailController: UITableViewController {
                 cell.content.text = r.headers.reduce("", {
                     $0 + "\n" + $1
                 })
+            } else if indexPath.section == 1 {
+                cell.content.text = r.payload
             }
         }
         return cell
