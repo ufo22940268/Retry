@@ -15,7 +15,7 @@
         <scene sceneID="ggo-QE-6ut">
             <objects>
                 <tableViewController title="Record" id="sAH-hh-xfr" customClass="RecordController" customModule="ImageCrawler" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="1" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="nn4-Py-mkp">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="1" rowHeight="-1" estimatedRowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" id="nn4-Py-mkp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -27,21 +27,33 @@
                                     <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OMU-Rb-G0h" userLabel="url">
-                                            <rect key="frame" x="20" y="11.5" width="301" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="RfF-Gu-XVm">
+                                            <rect key="frame" x="20" y="6" width="42" height="31.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OMU-Rb-G0h" userLabel="url">
+                                                    <rect key="frame" x="0.0" y="0.0" width="42" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E7I-xl-7Az">
+                                                    <rect key="frame" x="0.0" y="20.5" width="42" height="11"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstItem="OMU-Rb-G0h" firstAttribute="leading" secondItem="9Tm-cQ-2bH" secondAttribute="leading" constant="20" symbolic="YES" id="0hU-iB-EkW"/>
-                                        <constraint firstItem="OMU-Rb-G0h" firstAttribute="centerY" secondItem="9Tm-cQ-2bH" secondAttribute="centerY" id="6JA-hi-5c1"/>
-                                        <constraint firstAttribute="trailing" secondItem="OMU-Rb-G0h" secondAttribute="trailing" constant="20" symbolic="YES" id="aUA-7Y-pA2"/>
+                                        <constraint firstItem="RfF-Gu-XVm" firstAttribute="leading" secondItem="9Tm-cQ-2bH" secondAttribute="leading" constant="20" id="AfA-e7-XBk"/>
+                                        <constraint firstItem="RfF-Gu-XVm" firstAttribute="top" secondItem="9Tm-cQ-2bH" secondAttribute="top" constant="6" id="fIn-Wp-YWf"/>
+                                        <constraint firstAttribute="bottom" secondItem="RfF-Gu-XVm" secondAttribute="bottom" constant="6" id="pjK-RA-tIA"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="date" destination="E7I-xl-7Az" id="1T7-RS-Srg"/>
                                     <outlet property="url" destination="OMU-Rb-G0h" id="u6n-KN-mcM"/>
                                 </connections>
                             </tableViewCell>
@@ -53,10 +65,13 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Record" largeContentSizeImage="first" id="FI8-BB-zxh"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="table" destination="nn4-Py-mkp" id="s2B-qu-xhg"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N5H-1V-1lg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="-881"/>
+            <point key="canvasLocation" x="749.60000000000002" y="-881.10944527736137"/>
         </scene>
         <!--Second-->
         <scene sceneID="wg7-f3-ORb">

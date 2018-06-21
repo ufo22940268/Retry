@@ -10,7 +10,8 @@ import UIKit
 
 class RecordCell: UITableViewCell {
 
-    @IBOutlet weak var url: UILabel!
+    @IBOutlet weak var url: UILabel!    
+    @IBOutlet weak var date: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

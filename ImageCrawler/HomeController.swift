@@ -12,7 +12,8 @@ import RealmSwift
 class HomeController: UITabBarController {
 
     @IBOutlet weak var navigationBar: UINavigationItem!
-    
+    let realm = try! Realm()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,8 +23,6 @@ class HomeController: UITabBarController {
     }
     
     @IBAction func reset(sender: UINavigationItem) {
-        print("reset")
-        let realm = try! Realm()
         try! realm.write {
             realm.deleteAll()
         }
