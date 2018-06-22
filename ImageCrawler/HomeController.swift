@@ -26,6 +26,7 @@ class HomeController: UITabBarController {
         try! realm.write {
             realm.deleteAll()
         }
+        
     }
 
     override func didReceiveMemoryWarning() {

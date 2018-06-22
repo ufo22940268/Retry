@@ -19,8 +19,6 @@ class ServerObserverFactory : DebugObserverFactory {
 }
 
 class ProxySocketObserver: Observer<ProxySocketEvent> {
-    let realm =  try! Realm()
-    
     override func signal(_ event: ProxySocketEvent) {
         switch event {
         case .errorOccured:
@@ -36,7 +34,7 @@ class ProxySocketObserver: Observer<ProxySocketEvent> {
             let dataString = String(data: data,  encoding: .utf8)
             
             let socketId = socket.hashValue.description
-            
+            let realm =  try! Realm()
             var record = realm.objects(RequestRecord.self).filter("socketId = '\(socketId)'").first ?? RequestRecord()
             try! realm.write {
                 record.socketId = socketId
@@ -55,6 +53,7 @@ class ProxySocketObserver: Observer<ProxySocketEvent> {
                 realm.add(record)
             }
             
+            NSLog("______________________________--------------------------------------")
             DDLogInfo("--------------\(dataString!)-----\(socket.hashValue)--------------")
         case .disconnectCalled,
              .forceDisconnectCalled,

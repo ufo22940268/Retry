@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         DDLog.removeAllLoggers()
         DDLog.add(DDTTYLogger.sharedInstance, with: .info)
-        
+//        
         ObserverFactory.currentFactory = ServerObserverFactory()
         
         server = GCDHTTPProxyServer(address: nil, port: NEKit.Port(port: UInt16(9090)))
@@ -34,6 +34,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
 //        tryRealm()
         
+        NetworkManager().start()
+
         return true
     }
     
