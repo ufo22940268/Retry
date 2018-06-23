@@ -24,7 +24,7 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
         proxySettings.httpEnabled = true
         proxySettings.httpsServer = NEProxyServer(address: "127.0.0;.1", port: 9090)
         proxySettings.httpsEnabled = true
-        proxySettings.matchDomains = ["api.xinpinget.com"]
+        proxySettings.matchDomains = [""]
         networkSettings.proxySettings = proxySettings
         
         networkSettings.dnsSettings = NEDNSSettings(servers: ["114.114.114.114"])
