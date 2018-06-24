@@ -42,11 +42,9 @@ class DetailController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "contenta", for: indexPath) as! DetailContentCell
-        if let r = record {
+        if let r = record?.request {
             if indexPath.section == 0  {
-                cell.content.text = r.headers.reduce("", {
-                    $0 + "\n" + $1
-                })
+                cell.content.text = r.header
             } else if indexPath.section == 1 {
                 cell.content.text = r.payload
             }

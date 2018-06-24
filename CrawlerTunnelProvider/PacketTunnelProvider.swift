@@ -8,6 +8,7 @@
 
 import NetworkExtension
 import NEKit
+import RealmSwift
 
 class PacketTunnelProvider: NEPacketTunnelProvider {
 
@@ -16,6 +17,8 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
     override func startTunnel(options: [String : NSObject]?, completionHandler: @escaping (Error?) -> Void) {
         // Add code here to start the process of connecting the tunnel.
         NSLog("start tunnel-0-----------------")
+        
+        
         let networkSettings = NEPacketTunnelNetworkSettings(tunnelRemoteAddress: "127.0.0.1")
         networkSettings.mtu = 1500
         
@@ -24,7 +27,8 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
         proxySettings.httpEnabled = true
         proxySettings.httpsServer = NEProxyServer(address: "127.0.0;.1", port: 9090)
         proxySettings.httpsEnabled = true
-        proxySettings.matchDomains = [""]
+//        proxySettings.matchDomains = [""]
+        proxySettings.matchDomains = ["api.xinpinget.com"]
         networkSettings.proxySettings = proxySettings
         
         networkSettings.dnsSettings = NEDNSSettings(servers: ["114.114.114.114"])
@@ -40,9 +44,10 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
                 NSLog("++++++++++" + error.localizedDescription)
             }
             
-//            self.proxyServer = GCDHTTPProxyServer(address: IPAddress(fromString: "127.0.0.1"), port: 9090)
-//            ObserverFactory.currentFactory = DebugObserverFactory()
-//            try! self.proxyServer.start()
+            self.proxyServer = GCDHTTPProxyServer(address: nil, port: 9090)
+            ObserverFactory.currentFactory = ProxyObserverFactory()
+
+            try! self.proxyServer.start()
             
             completionHandler(nil)
             NSLog("end")

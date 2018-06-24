@@ -12,12 +12,15 @@ import RealmSwift
 class RecordController: UITableViewController {
 
     var records: Results<RequestRecord>?
-    let realm = try! Realm()
+    
+    let realm = RealmUtil.get()
+    
     var token:NotificationToken?
     @IBOutlet var table: UITableView!
     
     func loadRecords() {
         records = realm.objects(RequestRecord.self).sorted(byKeyPath: "date", ascending: false)
+        print("records count: \(records?.count)")
     }
     
     override func viewDidLoad() {
@@ -55,13 +58,17 @@ class RecordController: UITableViewController {
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "请求"
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        loadRecords()
+    }
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "record", for: indexPath) as! RecordCell
         if let record = records?[indexPath.item] {
             //Set hostname
-            if let firstLine = record.headers.first {
+            if let firstLine = record.request?.header {
                 let regex = try! NSRegularExpression(pattern: ".*https?://(.+?)/.*", options:[])
                 if let result = regex.firstMatch(in: firstLine, options: [], range: NSRange(location: 0, length: firstLine.count)) {
                     let groupRange = result.range(at: 1)

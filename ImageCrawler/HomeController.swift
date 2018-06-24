@@ -10,39 +10,45 @@ import UIKit
 import RealmSwift
 
 class HomeController: UITabBarController {
-
+    
     @IBOutlet weak var navigationBar: UINavigationItem!
-    let realm = try! Realm()
-
+    let realm = RealmUtil.get()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         let item = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.refresh, target: self, action: #selector(HomeController.reset(sender:)))
-        navigationBar.rightBarButtonItem = item
+        let copyItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.add, target: self, action: #selector(HomeController.copy(sender:)))
+        
+        navigationBar.rightBarButtonItems = [item, copyItem]
     }
     
-    @IBAction func reset(sender: UINavigationItem) {
+    @objc func reset(sender: UINavigationItem) {
         try! realm.write {
             realm.deleteAll()
         }
         
     }
-
+    
+    @objc func copy(sender: UINavigationItem) {
+        DebugUtil.copyRealm()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

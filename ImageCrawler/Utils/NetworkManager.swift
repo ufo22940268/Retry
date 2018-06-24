@@ -22,6 +22,10 @@ class NetworkManager {
                 targetManager = managers!.first!
             }
             
+            if targetManager.isEnabled && (targetManager.connection.status == .connecting || targetManager.connection.status == .connected)   {
+                return
+            }
+            
             let configuration = NETunnelProviderProtocol()
             let proxySettings = NEProxySettings()
             proxySettings.httpServer = NEProxyServer(address: "192.168.20.130", port: 6152)
@@ -50,5 +54,17 @@ class NetworkManager {
                 }
             }
         })
+    }
+    
+    func restart() {
+        NETunnelProviderManager.loadAllFromPreferences(completionHandler: {  (managers, error) in
+            if let managers = managers {
+                if managers.count > 0 && managers.first!.connection.status == .connected  {
+                    managers.first?.connection.stopVPNTunnel()
+                }
+            }
+        })
+        
+        start()
     }
 }

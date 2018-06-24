@@ -9,9 +9,22 @@
 import Foundation
 import RealmSwift
 
-class RequestRecord: Object {
-    @objc dynamic var socketId: String? = nil
-    let headers = List<String>()
+class HttpEntity:Object {
+    @objc dynamic var header: String? = nil
     @objc dynamic var payload: String? = nil
-    @objc dynamic var date: Date? = Date()
 }
+
+class ResponseEntity:HttpEntity {    
+}
+
+class RequestEntity:HttpEntity {
+}
+
+
+class RequestRecord: Object {
+    @objc dynamic var tunnelId: String? = nil
+    @objc dynamic var date: Date? = Date()
+    @objc dynamic var request: RequestEntity? = nil
+    @objc dynamic var response: ResponseEntity? = nil
+}
+
