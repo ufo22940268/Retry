@@ -69,12 +69,7 @@ class RecordController: UITableViewController {
         if let record = records?[indexPath.item] {
             //Set hostname
             if let firstLine = record.request?.header {
-                let regex = try! NSRegularExpression(pattern: ".*https?://(.+?)/.*", options:[])
-                if let result = regex.firstMatch(in: firstLine, options: [], range: NSRange(location: 0, length: firstLine.count)) {
-                    let groupRange = result.range(at: 1)
-                    let hostname = String(firstLine[Range(groupRange, in: firstLine)!])
-                    cell.url.text = hostname
-                }
+                cell.url.text = record.request?.parseHost()
             }
             
             //Set date
