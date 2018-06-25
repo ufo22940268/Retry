@@ -8,9 +8,12 @@
 
 import UIKit
 
-class DetailContentCell: UITableViewCell {
-
-    @IBOutlet weak var content: UILabel!
+class DetailInfoCell: UITableViewCell {
+    
+    @IBOutlet weak var key: UILabel!
+    
+    @IBOutlet weak var value: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
