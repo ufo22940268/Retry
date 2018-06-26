@@ -18,6 +18,11 @@ class HttpEntity:Object {
         return headers["Host"] ?? ""
     }
     
+    func parseField(field: String) -> String {
+        let headers = parseHeaders()
+        return headers[field] ?? ""
+    }
+    
     private func parseHeaders() -> [String: String] {
         if let header = header {
             return header.split(separator: "\r\n").filter { (line) -> Bool in
@@ -29,9 +34,6 @@ class HttpEntity:Object {
                     d[String(splits[0])] = String(splits[1]).trimmingCharacters(in: CharacterSet(charactersIn: " "))
                     return d
             }
-            //                .map { (line) -> Array<String> in
-            //                    line.split(separator: ":").map { line -> String in
-            //                        String(line)}
         }
         
         return [:]

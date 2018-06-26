@@ -28,7 +28,6 @@ class RecordController: UITableViewController {
         
         loadRecords()
         token = records!.observe { [weak self] changes in
-            print("+++++++++++++++++++++++++++++update+++++++++++++++++++")
             self?.loadRecords()
             self?.table.reloadData()
         }
@@ -83,12 +82,20 @@ class RecordController: UITableViewController {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath)
-        let detailController = storyboard?.instantiateViewController(withIdentifier: "DetailController") as! DetailController
-        detailController.record = records?[indexPath.row]
-        self.navigationController?.pushViewController(detailController, animated: true)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if  segue.identifier == "detail" {
+            let detailController = segue.destination as! DetailController
+            if let record = records?[table.indexPathForSelectedRow!.item]  {
+                detailController.record = record
+            }
+        }
     }
+    
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let detailController = storyboard?.instantiateViewController(withIdentifier: "DetailController") as! DetailController
+//        detailController.record = records?[indexPath.row]
+//        self.navigationController?.pushViewController(detailController, animated: true)
+//    }
 
     deinit {
         token?.invalidate()

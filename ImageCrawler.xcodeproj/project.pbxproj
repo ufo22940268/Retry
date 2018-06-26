@@ -36,6 +36,9 @@
 		428EA61320D8D7C4000710DF /* Yaml.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 42E68EC620D318C200E715DE /* Yaml.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		428EA61520D8D806000710DF /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 428EA61420D8D805000710DF /* CocoaAsyncSocket.framework */; };
 		428EA61620D8D806000710DF /* CocoaAsyncSocket.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 428EA61420D8D805000710DF /* CocoaAsyncSocket.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		42AB61B020E0ED8F007EEA69 /* SummarySegmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AB61AF20E0ED8F007EEA69 /* SummarySegmentController.swift */; };
+		42AB61B620E10BF1007EEA69 /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42AB61B520E10BF1007EEA69 /* SwiftDate.framework */; };
+		42AB61B820E1161B007EEA69 /* RequestSegmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AB61B720E1161B007EEA69 /* RequestSegmentController.swift */; };
 		42C5E33520DE3C4F0011D42A /* RequestRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421EB72D20D8D26F00B05640 /* RequestRecord.swift */; };
 		42C5E33620DE3D410011D42A /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 421EB72A20D8CF8B00B05640 /* Realm.framework */; };
 		42C5E33820DE6D7E0011D42A /* RealmUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C5E33720DE6D7E0011D42A /* RealmUtil.swift */; };
@@ -43,6 +46,7 @@
 		42C5E33A20DE71A00011D42A /* ProxyObserverFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42427FFB20D39AF30053FA82 /* ProxyObserverFactory.swift */; };
 		42C5E33B20DE73490011D42A /* NEKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E68EC320D3177900E715DE /* NEKit.framework */; };
 		42C891C520E0946100CB24A2 /* TableSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C891C420E0946100CB24A2 /* TableSegment.swift */; };
+		42C891CF20E0ECF900CB24A2 /* SegmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C891CE20E0ECF900CB24A2 /* SegmentController.swift */; };
 		42DA4DAB20C8C86E002D161F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DA4DAA20C8C86E002D161F /* AppDelegate.swift */; };
 		42DA4DB220C8C86E002D161F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42DA4DB020C8C86E002D161F /* Main.storyboard */; };
 		42DA4DB420C8C86F002D161F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42DA4DB320C8C86F002D161F /* Assets.xcassets */; };
@@ -180,8 +184,12 @@
 		428EA5FF20D8D734000710DF /* CocoaLumberjackSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CocoaLumberjackSwift.framework; sourceTree = "<group>"; };
 		428EA60320D8D751000710DF /* CocoaLumberjack.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CocoaLumberjack.framework; sourceTree = "<group>"; };
 		428EA61420D8D805000710DF /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CocoaAsyncSocket.framework; sourceTree = "<group>"; };
+		42AB61AF20E0ED8F007EEA69 /* SummarySegmentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummarySegmentController.swift; sourceTree = "<group>"; };
+		42AB61B520E10BF1007EEA69 /* SwiftDate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftDate.framework; path = Carthage/Build/iOS/SwiftDate.framework; sourceTree = "<group>"; };
+		42AB61B720E1161B007EEA69 /* RequestSegmentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestSegmentController.swift; sourceTree = "<group>"; };
 		42C5E33720DE6D7E0011D42A /* RealmUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmUtil.swift; sourceTree = "<group>"; };
 		42C891C420E0946100CB24A2 /* TableSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSegment.swift; sourceTree = "<group>"; };
+		42C891CE20E0ECF900CB24A2 /* SegmentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentController.swift; sourceTree = "<group>"; };
 		42DA4DA720C8C86E002D161F /* ImageCrawler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageCrawler.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42DA4DAA20C8C86E002D161F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42DA4DB120C8C86E002D161F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -218,6 +226,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42AB61B620E10BF1007EEA69 /* SwiftDate.framework in Frameworks */,
 				428EA60A20D8D7C4000710DF /* MMDB.framework in Frameworks */,
 				428EA61220D8D7C4000710DF /* Yaml.framework in Frameworks */,
 				428EA60E20D8D7C4000710DF /* Sodium.framework in Frameworks */,
@@ -298,6 +307,9 @@
 				420446AE20DA3F6300ABDF31 /* RecordController.swift */,
 				428CF3BA20DB4CC6009D90A2 /* HomeController.swift */,
 				428CF3C020DB90F8009D90A2 /* DetailController.swift */,
+				42C891CE20E0ECF900CB24A2 /* SegmentController.swift */,
+				42AB61AF20E0ED8F007EEA69 /* SummarySegmentController.swift */,
+				42AB61B720E1161B007EEA69 /* RequestSegmentController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -366,6 +378,7 @@
 		42DA4DDA20C8CA13002D161F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				42AB61B520E10BF1007EEA69 /* SwiftDate.framework */,
 				42EEC95320DCFA9D0009A6AC /* NetworkExtension.framework */,
 				42EEC95020DCF5310009A6AC /* CocoaAsyncSocket.framework */,
 				421EB72A20D8CF8B00B05640 /* Realm.framework */,
@@ -416,7 +429,7 @@
 				42DA4DA320C8C86E002D161F /* Sources */,
 				42DA4DA420C8C86E002D161F /* Frameworks */,
 				42DA4DA520C8C86E002D161F /* Resources */,
-				42DA4DDD20C8CA3E002D161F /* ShellScript */,
+				42DA4DDD20C8CA3E002D161F /* Run Script */,
 				4222EAD920CF9871000967CC /* Embed App Extensions */,
 				428EA60220D8D734000710DF /* Embed Frameworks */,
 			);
@@ -636,7 +649,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		42DA4DDD20C8CA3E002D161F /* ShellScript */ = {
+		42DA4DDD20C8CA3E002D161F /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -646,12 +659,15 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Switch.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftDate.framework",
 			);
+			name = "Run Script";
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Kingfisher.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Switch.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RealmSwift.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Realm.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SwiftDate.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -667,13 +683,16 @@
 				428CF3C120DB90F8009D90A2 /* DetailController.swift in Sources */,
 				42EEC93820DC7B040009A6AC /* NetworkManager.swift in Sources */,
 				4256260B20DFAF320033E0A8 /* DebugUtil.swift in Sources */,
+				42AB61B820E1161B007EEA69 /* RequestSegmentController.swift in Sources */,
 				428CF3C420DB97A1009D90A2 /* DetailContentCell.swift in Sources */,
 				420446AF20DA3F6300ABDF31 /* RecordController.swift in Sources */,
+				42C891CF20E0ECF900CB24A2 /* SegmentController.swift in Sources */,
 				428CF3BB20DB4CC6009D90A2 /* HomeController.swift in Sources */,
 				42C5E33820DE6D7E0011D42A /* RealmUtil.swift in Sources */,
 				42C891C520E0946100CB24A2 /* TableSegment.swift in Sources */,
 				42DA4DAB20C8C86E002D161F /* AppDelegate.swift in Sources */,
 				420446B120DA45A800ABDF31 /* RecordCell.swift in Sources */,
+				42AB61B020E0ED8F007EEA69 /* SummarySegmentController.swift in Sources */,
 				421EB72E20D8D26F00B05640 /* RequestRecord.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

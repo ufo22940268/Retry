@@ -2,3 +2,4 @@ github "onevcat/Kingfisher" ~> 4.0
 github "T-Pham/Switch"
 github "zhuhaow/NEKit" "master"
 github "realm/realm-cocoa"
+github "malcommac/SwiftDate"
