@@ -20,7 +20,7 @@ class RecordController: UITableViewController {
     
     func loadRecords() {
         records = realm.objects(RequestRecord.self).sorted(byKeyPath: "date", ascending: false)
-        print("records count: \(records?.count)")
+        
     }
     
     override func viewDidLoad() {

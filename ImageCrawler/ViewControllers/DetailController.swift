@@ -16,6 +16,7 @@ class DetailController: UIViewController {
     @IBOutlet weak var summaryView: UIView!
     @IBOutlet weak var requestView: UIView!
     var segmentViews: [UIView]!
+    var segmentControllers: [String: SegmentController]! = [String:SegmentController]()
     
     @IBAction func onSegmentChanged(_ sender: UISegmentedControl) {
         for i in 0..<sender.numberOfSegments {
@@ -25,10 +26,21 @@ class DetailController: UIViewController {
                 segmentViews[i].isHidden = true
             }
         }
+
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         segmentViews = [summaryView, requestView]
+        
+        for (_, value) in segmentControllers {
+            value.record = record
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! SegmentController
+        segmentControllers[segue.identifier!] = vc
+        print("prepare")
     }
 }

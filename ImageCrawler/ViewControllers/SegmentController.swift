@@ -10,6 +10,17 @@ import UIKit
 
 class SegmentController: UITableViewController {
 
+    var record: RequestRecord! {
+        didSet {
+            self.updateViews()
+        }
+    }
+    
+    func updateViews() {
+        print("update in segment")
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

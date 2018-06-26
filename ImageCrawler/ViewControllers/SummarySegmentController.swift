@@ -1,4 +1,4 @@
-//
+    //
 //  SummarySegmentController.swift
 //  ImageCrawler
 //
@@ -13,13 +13,11 @@ import SwiftDate
 class SummarySegmentController: SegmentController {
     
     @IBOutlet weak var date: UILabel!
-    var record: RequestRecord!
-    
-    override func viewDidLoad() {
-        record = RealmUtil.get().objects(RequestRecord.self).first
-        
-        let dateString = DateInRegion(absoluteDate: record.date!).string(dateStyle: .medium, timeStyle: .medium)
+ 
+    override func updateViews() {
+        print("update in summary")
+        let dateString = DateInRegion(absoluteDate: self.record.date!).string(dateStyle: .medium, timeStyle: .medium)
         date.text = dateString
-        
+        tableView.reloadData()
     }
 }
