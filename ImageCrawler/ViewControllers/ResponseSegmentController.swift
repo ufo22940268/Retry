@@ -11,21 +11,21 @@ import Foundation
 import UIKit
 import SwiftDate
 
-class RequestSegmentController: SegmentController {
+class ResponseSegmentController: SegmentController {
     
     @IBOutlet weak var header: UILabel!
     @IBOutlet weak var type: UILabel!
     
     override func updateViews() {
-        header.text = self.record.request?.header
-        type.text = self.record.request?.parseField(field: "Content-Type")
+        header.text = self.record.response?.header
+        type.text = self.record.response?.parseField(field: "Content-Type")
         tableView.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "body" {
             let bodyController = segue.destination as! HttpBodyController
-            bodyController.bodyData = record.request?.payload
+            bodyController.bodyData = record.response?.payload
         }
     }
 }

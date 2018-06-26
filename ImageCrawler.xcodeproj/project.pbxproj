@@ -39,6 +39,8 @@
 		42AB61B020E0ED8F007EEA69 /* SummarySegmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AB61AF20E0ED8F007EEA69 /* SummarySegmentController.swift */; };
 		42AB61B620E10BF1007EEA69 /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42AB61B520E10BF1007EEA69 /* SwiftDate.framework */; };
 		42AB61B820E1161B007EEA69 /* RequestSegmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AB61B720E1161B007EEA69 /* RequestSegmentController.swift */; };
+		42AB61BC20E2141A007EEA69 /* HttpBodyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AB61BB20E2141A007EEA69 /* HttpBodyController.swift */; };
+		42AB61BE20E218B9007EEA69 /* ResponseSegmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AB61BD20E218B9007EEA69 /* ResponseSegmentController.swift */; };
 		42C5E33520DE3C4F0011D42A /* RequestRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421EB72D20D8D26F00B05640 /* RequestRecord.swift */; };
 		42C5E33620DE3D410011D42A /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 421EB72A20D8CF8B00B05640 /* Realm.framework */; };
 		42C5E33820DE6D7E0011D42A /* RealmUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C5E33720DE6D7E0011D42A /* RealmUtil.swift */; };
@@ -187,6 +189,8 @@
 		42AB61AF20E0ED8F007EEA69 /* SummarySegmentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummarySegmentController.swift; sourceTree = "<group>"; };
 		42AB61B520E10BF1007EEA69 /* SwiftDate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftDate.framework; path = Carthage/Build/iOS/SwiftDate.framework; sourceTree = "<group>"; };
 		42AB61B720E1161B007EEA69 /* RequestSegmentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestSegmentController.swift; sourceTree = "<group>"; };
+		42AB61BB20E2141A007EEA69 /* HttpBodyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpBodyController.swift; sourceTree = "<group>"; };
+		42AB61BD20E218B9007EEA69 /* ResponseSegmentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseSegmentController.swift; sourceTree = "<group>"; };
 		42C5E33720DE6D7E0011D42A /* RealmUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmUtil.swift; sourceTree = "<group>"; };
 		42C891C420E0946100CB24A2 /* TableSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSegment.swift; sourceTree = "<group>"; };
 		42C891CE20E0ECF900CB24A2 /* SegmentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentController.swift; sourceTree = "<group>"; };
@@ -309,7 +313,9 @@
 				428CF3C020DB90F8009D90A2 /* DetailController.swift */,
 				42C891CE20E0ECF900CB24A2 /* SegmentController.swift */,
 				42AB61AF20E0ED8F007EEA69 /* SummarySegmentController.swift */,
+				42AB61BB20E2141A007EEA69 /* HttpBodyController.swift */,
 				42AB61B720E1161B007EEA69 /* RequestSegmentController.swift */,
+				42AB61BD20E218B9007EEA69 /* ResponseSegmentController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -680,6 +686,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42AB61BE20E218B9007EEA69 /* ResponseSegmentController.swift in Sources */,
 				428CF3C120DB90F8009D90A2 /* DetailController.swift in Sources */,
 				42EEC93820DC7B040009A6AC /* NetworkManager.swift in Sources */,
 				4256260B20DFAF320033E0A8 /* DebugUtil.swift in Sources */,
@@ -693,6 +700,7 @@
 				42DA4DAB20C8C86E002D161F /* AppDelegate.swift in Sources */,
 				420446B120DA45A800ABDF31 /* RecordCell.swift in Sources */,
 				42AB61B020E0ED8F007EEA69 /* SummarySegmentController.swift in Sources */,
+				42AB61BC20E2141A007EEA69 /* HttpBodyController.swift in Sources */,
 				421EB72E20D8D26F00B05640 /* RequestRecord.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

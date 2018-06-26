@@ -13,12 +13,15 @@ class DetailController: UIViewController {
     
     var record: RequestRecord?
 
+    @IBOutlet weak var segmentControl: UISegmentedControl!
     @IBOutlet weak var summaryView: UIView!
     @IBOutlet weak var requestView: UIView!
+    @IBOutlet weak var responseView: UIView!
     var segmentViews: [UIView]!
+    
     var segmentControllers: [String: SegmentController]! = [String:SegmentController]()
     
-    @IBAction func onSegmentChanged(_ sender: UISegmentedControl) {
+    fileprivate func selectSegment(_ sender: UISegmentedControl) {
         for i in 0..<sender.numberOfSegments {
             if i == sender.selectedSegmentIndex {
                 segmentViews[i].isHidden = false
@@ -26,12 +29,16 @@ class DetailController: UIViewController {
                 segmentViews[i].isHidden = true
             }
         }
-
+    }
+    
+    @IBAction func onSegmentChanged(_ sender: UISegmentedControl) {
+        selectSegment(sender)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        segmentViews = [summaryView, requestView]
+        segmentViews = [summaryView, requestView, responseView]
+        
         
         for (_, value) in segmentControllers {
             value.record = record
@@ -41,6 +48,5 @@ class DetailController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! SegmentController
         segmentControllers[segue.identifier!] = vc
-        print("prepare")
     }
 }
