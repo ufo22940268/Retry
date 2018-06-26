@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -43,6 +42,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Qwf-KB-EcJ" kind="show" identifier="detail" id="5NS-VB-xnI"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -65,23 +67,23 @@
             <objects>
                 <viewController storyboardIdentifier="DetailController" title="详细内容" id="Qwf-KB-EcJ" customClass="DetailController" customModule="ImageCrawler" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="X0U-U8-flD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cct-kM-z0b" userLabel="summary">
-                                <rect key="frame" x="0.0" y="68" width="375" height="599"/>
+                                <rect key="frame" x="0.0" y="48" width="375" height="506"/>
                                 <connections>
                                     <segue destination="02B-sO-FjW" kind="embed" identifier="summary" id="M8J-Aa-OVD"/>
                                 </connections>
                             </containerView>
                             <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3OO-E6-DkA" userLabel="request">
-                                <rect key="frame" x="0.0" y="40" width="375" height="627"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="534"/>
                                 <connections>
                                     <segue destination="YBi-n9-3G1" kind="embed" identifier="request" id="Azm-Hh-OXj"/>
                                 </connections>
                             </containerView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="YLn-Uv-G1N">
-                                <rect key="frame" x="146" y="40" width="83" height="29"/>
+                                <rect key="frame" x="146" y="20" width="83" height="29"/>
                                 <segments>
                                     <segment title="总览"/>
                                     <segment title="请求"/>
@@ -120,7 +122,7 @@
             <objects>
                 <tableViewController id="YBi-n9-3G1" userLabel="Request Segment" customClass="RequestSegmentController" customModule="ImageCrawler" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="VIg-r2-dXN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="627"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="534"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
@@ -211,50 +213,6 @@
             </objects>
             <point key="canvasLocation" x="2409" y="-576"/>
         </scene>
-        <!--开关-->
-        <scene sceneID="wg7-f3-ORb">
-            <objects>
-                <viewController title="开关" id="8rJ-Kc-sve" customClass="SwitchViewController" customModule="ImageCrawler" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nri-LU-dvc" customClass="Switch" customModule="Switch">
-                                <rect key="frame" x="37" y="264" width="300" height="75"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="Bo0-yB-0V3"/>
-                                    <constraint firstAttribute="width" secondItem="nri-LU-dvc" secondAttribute="height" multiplier="4:1" id="s3M-U8-uNb"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="leftText" value="开"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="rightText" value="关"/>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="disabledColor">
-                                        <color key="value" name="secondarySelectedControlColor" catalog="System" colorSpace="catalog"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="rightSelected" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="toggle:" destination="8rJ-Kc-sve" eventType="valueChanged" id="CID-2n-eIB"/>
-                                </connections>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="nri-LU-dvc" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="UWR-cL-Ttm"/>
-                            <constraint firstItem="nri-LU-dvc" firstAttribute="centerY" secondItem="QS5-Rx-YEW" secondAttribute="centerY" id="vTK-m7-Cqt"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="cPa-gy-q4n"/>
-                    <connections>
-                        <outlet property="switch" destination="nri-LU-dvc" id="VS3-NQ-kTk"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="750" y="400"/>
-        </scene>
         <!--Retry-->
         <scene sceneID="diM-Rt-WeH">
             <objects>
@@ -284,7 +242,6 @@
                     <connections>
                         <outlet property="navigationBar" destination="BZW-Gw-401" id="7rp-tW-63v"/>
                         <segue destination="sAH-hh-xfr" kind="relationship" relationship="viewControllers" id="Pfr-jZ-uk9"/>
-                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="FUX-n2-vKc"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -296,7 +253,7 @@
             <objects>
                 <tableViewController id="02B-sO-FjW" userLabel="Summary Segment" customClass="SummarySegmentController" customModule="ImageCrawler" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="50" sectionFooterHeight="18" id="aIc-Ok-NVz">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="599"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="506"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
@@ -417,6 +374,5 @@
     </scenes>
     <resources>
         <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
     </resources>
 </document>
