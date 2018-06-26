@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import SwiftDate
 
 class RecordController: UITableViewController {
 
@@ -64,21 +65,13 @@ class RecordController: UITableViewController {
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "record", for: indexPath) as! RecordCell
-        if let record = records?[indexPath.item] {
-            //Set hostname
-            if let firstLine = record.request?.header {
-                cell.url.text = record.request?.parseHost()
-            }
-            
-            //Set date
-            let formatter = DateFormatter()
-            formatter.dateFormat = "aaa hh:mm:ss"
-            formatter.amSymbol = "上午"
-            formatter.pmSymbol = "下午"
-            cell.date.text = formatter.string(from:record.date!)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "record", for: indexPath)
+
+        if let record = records?[indexPath.item], let request = record.request {
+            cell.textLabel?.text = request.parseHost()
+            cell.detailTextLabel?.text = DateInRegion(absoluteDate: record.date!).string(dateStyle: .medium, timeStyle: .medium)
         }
-        
+
         return cell
     }
     
