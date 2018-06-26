@@ -256,11 +256,42 @@
                     <connections>
                         <outlet property="navigationBar" destination="BZW-Gw-401" id="7rp-tW-63v"/>
                         <segue destination="sAH-hh-xfr" kind="relationship" relationship="viewControllers" id="Pfr-jZ-uk9"/>
+                        <segue destination="dL0-r2-nS8" kind="relationship" relationship="viewControllers" id="vnB-Wx-tX9"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+        <!--Switcher-->
+        <scene sceneID="qsl-AG-i7Y">
+            <objects>
+                <viewController id="dL0-r2-nS8" userLabel="Switcher" customClass="SwitcherController" customModule="ImageCrawler" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="k6C-yZ-wE1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FHq-TM-UcO" customClass="Switch" customModule="Switch">
+                                <rect key="frame" x="67" y="237" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="leftText" value="On"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="rightText" value="Off"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="onSwitchChanged:" destination="dL0-r2-nS8" eventType="valueChanged" id="Xky-eH-IiL"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="zCd-5t-YH6"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Switcher" image="second" id="FJX-FD-Fvu"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e3S-1M-R0h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1120" y="602"/>
         </scene>
         <!--Summary Segment-->
         <scene sceneID="pzT-q9-XND">
@@ -531,6 +562,7 @@
     </scenes>
     <resources>
         <image name="first" width="30" height="30"/>
+        <image name="second" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="cCB-mH-o6L"/>

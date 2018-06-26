@@ -25,8 +25,8 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
         let proxySettings = NEProxySettings()
         proxySettings.httpServer = NEProxyServer(address: "127.0.0.1", port: 9090)
         proxySettings.httpEnabled = true
-        proxySettings.httpsServer = NEProxyServer(address: "127.0.0;.1", port: 9090)
-        proxySettings.httpsEnabled = true
+//        proxySettings.httpsServer = NEProxyServer(address: "127.0.0;.1", port: 9090)
+//        proxySettings.httpsEnabled = true
 //        proxySettings.matchDomains = [""]
         proxySettings.matchDomains = ["api.xinpinget.com"]
         networkSettings.proxySettings = proxySettings
@@ -44,7 +44,9 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
                 NSLog("++++++++++" + error.localizedDescription)
             }
             
-            self.proxyServer = GCDHTTPProxyServer(address: nil, port: 9090)
+//            self.proxyServer = GCDHTTPProxyServer(address: nil, port: 9090)
+            self.proxyServer = GCDHTTPProxyServer(address: IPAddress(fromString: "127.0.0.1"), port: 9090)
+
             ObserverFactory.currentFactory = ProxyObserverFactory()
 
             try! self.proxyServer.start()

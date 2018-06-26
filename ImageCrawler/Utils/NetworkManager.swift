@@ -56,7 +56,7 @@ class NetworkManager {
         })
     }
     
-    func restart() {
+    func stop() {
         NETunnelProviderManager.loadAllFromPreferences(completionHandler: {  (managers, error) in
             if let managers = managers {
                 if managers.count > 0 && managers.first!.connection.status == .connected  {
@@ -64,7 +64,10 @@ class NetworkManager {
                 }
             }
         })
-        
+    }
+    
+    func restart() {
+        stop()
         start()
     }
 }

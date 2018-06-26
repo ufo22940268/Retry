@@ -42,6 +42,7 @@
 		42AB61BC20E2141A007EEA69 /* HttpBodyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AB61BB20E2141A007EEA69 /* HttpBodyController.swift */; };
 		42AB61BE20E218B9007EEA69 /* ResponseSegmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AB61BD20E218B9007EEA69 /* ResponseSegmentController.swift */; };
 		42AB61C020E231F2007EEA69 /* Highlightr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42AB61BF20E231F2007EEA69 /* Highlightr.framework */; };
+		42AB61C220E2473B007EEA69 /* SwitcherController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AB61C120E2473B007EEA69 /* SwitcherController.swift */; };
 		42C5E33520DE3C4F0011D42A /* RequestRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421EB72D20D8D26F00B05640 /* RequestRecord.swift */; };
 		42C5E33620DE3D410011D42A /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 421EB72A20D8CF8B00B05640 /* Realm.framework */; };
 		42C5E33820DE6D7E0011D42A /* RealmUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C5E33720DE6D7E0011D42A /* RealmUtil.swift */; };
@@ -193,6 +194,7 @@
 		42AB61BB20E2141A007EEA69 /* HttpBodyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpBodyController.swift; sourceTree = "<group>"; };
 		42AB61BD20E218B9007EEA69 /* ResponseSegmentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseSegmentController.swift; sourceTree = "<group>"; };
 		42AB61BF20E231F2007EEA69 /* Highlightr.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Highlightr.framework; path = Carthage/Build/iOS/Highlightr.framework; sourceTree = "<group>"; };
+		42AB61C120E2473B007EEA69 /* SwitcherController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitcherController.swift; sourceTree = "<group>"; };
 		42C5E33720DE6D7E0011D42A /* RealmUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmUtil.swift; sourceTree = "<group>"; };
 		42C891C420E0946100CB24A2 /* TableSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSegment.swift; sourceTree = "<group>"; };
 		42C891CE20E0ECF900CB24A2 /* SegmentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentController.swift; sourceTree = "<group>"; };
@@ -319,6 +321,7 @@
 				42AB61BB20E2141A007EEA69 /* HttpBodyController.swift */,
 				42AB61B720E1161B007EEA69 /* RequestSegmentController.swift */,
 				42AB61BD20E218B9007EEA69 /* ResponseSegmentController.swift */,
+				42AB61C120E2473B007EEA69 /* SwitcherController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -705,6 +708,7 @@
 				42C891C520E0946100CB24A2 /* TableSegment.swift in Sources */,
 				42DA4DAB20C8C86E002D161F /* AppDelegate.swift in Sources */,
 				420446B120DA45A800ABDF31 /* RecordCell.swift in Sources */,
+				42AB61C220E2473B007EEA69 /* SwitcherController.swift in Sources */,
 				42AB61B020E0ED8F007EEA69 /* SummarySegmentController.swift in Sources */,
 				42AB61BC20E2141A007EEA69 /* HttpBodyController.swift in Sources */,
 				421EB72E20D8D26F00B05640 /* RequestRecord.swift in Sources */,
