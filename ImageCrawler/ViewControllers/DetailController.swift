@@ -32,5 +32,3 @@ class DetailController: UIViewController {
         segmentViews = [summaryView, requestView]
     }
 }
-
-

@@ -91,11 +91,9 @@ class RecordController: UITableViewController {
         }
     }
     
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let detailController = storyboard?.instantiateViewController(withIdentifier: "DetailController") as! DetailController
-//        detailController.record = records?[indexPath.row]
-//        self.navigationController?.pushViewController(detailController, animated: true)
-//    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+    }
 
     deinit {
         token?.invalidate()
