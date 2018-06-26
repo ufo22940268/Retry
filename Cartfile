@@ -3,3 +3,5 @@ github "T-Pham/Switch"
 github "zhuhaow/NEKit" "master"
 github "realm/realm-cocoa"
 github "malcommac/SwiftDate"
+github "raspu/Highlightr"
+

@@ -41,6 +41,7 @@
 		42AB61B820E1161B007EEA69 /* RequestSegmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AB61B720E1161B007EEA69 /* RequestSegmentController.swift */; };
 		42AB61BC20E2141A007EEA69 /* HttpBodyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AB61BB20E2141A007EEA69 /* HttpBodyController.swift */; };
 		42AB61BE20E218B9007EEA69 /* ResponseSegmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AB61BD20E218B9007EEA69 /* ResponseSegmentController.swift */; };
+		42AB61C020E231F2007EEA69 /* Highlightr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42AB61BF20E231F2007EEA69 /* Highlightr.framework */; };
 		42C5E33520DE3C4F0011D42A /* RequestRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421EB72D20D8D26F00B05640 /* RequestRecord.swift */; };
 		42C5E33620DE3D410011D42A /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 421EB72A20D8CF8B00B05640 /* Realm.framework */; };
 		42C5E33820DE6D7E0011D42A /* RealmUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C5E33720DE6D7E0011D42A /* RealmUtil.swift */; };
@@ -191,6 +192,7 @@
 		42AB61B720E1161B007EEA69 /* RequestSegmentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestSegmentController.swift; sourceTree = "<group>"; };
 		42AB61BB20E2141A007EEA69 /* HttpBodyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpBodyController.swift; sourceTree = "<group>"; };
 		42AB61BD20E218B9007EEA69 /* ResponseSegmentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseSegmentController.swift; sourceTree = "<group>"; };
+		42AB61BF20E231F2007EEA69 /* Highlightr.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Highlightr.framework; path = Carthage/Build/iOS/Highlightr.framework; sourceTree = "<group>"; };
 		42C5E33720DE6D7E0011D42A /* RealmUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmUtil.swift; sourceTree = "<group>"; };
 		42C891C420E0946100CB24A2 /* TableSegment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSegment.swift; sourceTree = "<group>"; };
 		42C891CE20E0ECF900CB24A2 /* SegmentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentController.swift; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42AB61C020E231F2007EEA69 /* Highlightr.framework in Frameworks */,
 				42AB61B620E10BF1007EEA69 /* SwiftDate.framework in Frameworks */,
 				428EA60A20D8D7C4000710DF /* MMDB.framework in Frameworks */,
 				428EA61220D8D7C4000710DF /* Yaml.framework in Frameworks */,
@@ -384,6 +387,7 @@
 		42DA4DDA20C8CA13002D161F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				42AB61BF20E231F2007EEA69 /* Highlightr.framework */,
 				42AB61B520E10BF1007EEA69 /* SwiftDate.framework */,
 				42EEC95320DCFA9D0009A6AC /* NetworkExtension.framework */,
 				42EEC95020DCF5310009A6AC /* CocoaAsyncSocket.framework */,
@@ -666,6 +670,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftDate.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Highlightr.framework",
 			);
 			name = "Run Script";
 			outputPaths = (
@@ -674,6 +679,7 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/RealmSwift.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Realm.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SwiftDate.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Highlightr.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

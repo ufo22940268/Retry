@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Highlightr
 
 class HttpBodyController: UIViewController {
 
@@ -15,23 +16,34 @@ class HttpBodyController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        body.text = bodyData
+//        body.text = bodyData
+        if let text = formatJson() {
+            body.attributedText = text
+        }
+    }
+    
+    
+    func formatJson() -> NSAttributedString? {
+        do {
+            //Should format json data.
+            let highlightr = Highlightr()
+            
+//            bodyData = bodyData.replacingOccurrences(of: "\\", with: "")
+//            let d = bodyData.data(using: .utf8)
+//            let obj = try JSONSerialization.jsonObject(with: d!, options: .allowFragments)
+//            let jsonData = try JSONSerialization.data(withJSONObject: obj, options: .prettyPrinted)
+//            let formattedString = String(bytes: jsonData, encoding: .utf8)
+            return highlightr!.highlight(bodyData)
+        } catch {
+            print("data", bodyData)
+            print("error", error.localizedDescription)
+        }
+        return nil
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
