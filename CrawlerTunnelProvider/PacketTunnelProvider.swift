@@ -13,6 +13,7 @@ import RealmSwift
 class PacketTunnelProvider: NEPacketTunnelProvider {
 
     var proxyServer: ProxyServer!
+    var debugProxyServer: ProxyServer!
     
     override func startTunnel(options: [String : NSObject]?, completionHandler: @escaping (Error?) -> Void) {
         // Add code here to start the process of connecting the tunnel.
@@ -44,12 +45,13 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
                 NSLog("++++++++++" + error.localizedDescription)
             }
             
-//            self.proxyServer = GCDHTTPProxyServer(address: nil, port: 9090)
             self.proxyServer = GCDHTTPProxyServer(address: IPAddress(fromString: "127.0.0.1"), port: 9090)
+            self.debugProxyServer = GCDHTTPProxyServer(address: nil, port: 9091)
 
             ObserverFactory.currentFactory = ProxyObserverFactory()
 
             try! self.proxyServer.start()
+            try! self.debugProxyServer.start()
             
             completionHandler(nil)
             NSLog("end")
@@ -62,6 +64,7 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
     override func stopTunnel(with reason: NEProviderStopReason, completionHandler: @escaping () -> Void) {
         // Add code here to start the process of stopping the tunnel.
         proxyServer.stop()
+        debugProxyServer.stop()
         completionHandler()
     }
     

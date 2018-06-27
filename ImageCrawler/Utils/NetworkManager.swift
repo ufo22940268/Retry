@@ -28,11 +28,6 @@ class NetworkManager {
             
             let configuration = NETunnelProviderProtocol()
             let proxySettings = NEProxySettings()
-            proxySettings.httpServer = NEProxyServer(address: "192.168.20.130", port: 6152)
-            proxySettings.httpEnabled = true
-            proxySettings.httpsServer = NEProxyServer(address: "192.168.20.130", port: 6152)
-            proxySettings.httpsEnabled = true
-            configuration.proxySettings = proxySettings
             configuration.serverAddress = "ImageCrawler"
             configuration.providerBundleIdentifier = "bettycc.com.ImageCrawler.CrawlerTunnelProvider"
             targetManager.protocolConfiguration = configuration
