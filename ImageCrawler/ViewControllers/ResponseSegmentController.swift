@@ -25,7 +25,10 @@ class ResponseSegmentController: SegmentController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "body" {
             let bodyController = segue.destination as! HttpBodyController
-            bodyController.bodyData = record.response?.payload
+            if let response = record.response {
+                bodyController.bodyData = response.payload
+                bodyController.setType(contentType: response.parseField(field: "Content-Type"))
+            }
         }
     }
 }

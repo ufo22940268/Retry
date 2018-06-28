@@ -13,12 +13,32 @@ class HttpBodyController: UIViewController {
 
     @IBOutlet weak var body: UILabel!
     var bodyData: String!
+    var bodyType: BodyType!
+    
+    enum BodyType {
+        case json, text, image
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        body.text = bodyData
-        if let text = formatJson() {
+        var text:NSAttributedString?
+        switch bodyType {
+        case .json:
+            text = formatJson()
+        default:
+            text = NSAttributedString(string: bodyData ?? "")
+        }
+        
+        if let text = text {
             body.attributedText = text
+        }
+    }
+    
+    func setType(contentType: String) {
+        if contentType.contains("json") {
+            bodyType = .json
+        } else {
+            
         }
     }
     
@@ -27,19 +47,22 @@ class HttpBodyController: UIViewController {
         do {
             //Should format json data.
             let highlightr = Highlightr()
+            highlightr?.setTheme(to: "solarized-light")
             
-//            bodyData = bodyData.replacingOccurrences(of: "\\", with: "")
-//            let d = bodyData.data(using: .utf8)
-//            let obj = try JSONSerialization.jsonObject(with: d!, options: .allowFragments)
-//            let jsonData = try JSONSerialization.data(withJSONObject: obj, options: .prettyPrinted)
-//            let formattedString = String(bytes: jsonData, encoding: .utf8)
-            return highlightr!.highlight(bodyData)
+            bodyData = bodyData.replacingOccurrences(of: "\\", with: "")
+            let d = bodyData.data(using: .utf8)
+            let obj = try JSONSerialization.jsonObject(with: d!, options: .allowFragments)
+            let jsonData = try JSONSerialization.data(withJSONObject: obj, options: .prettyPrinted)
+            let formattedString = String(bytes: jsonData, encoding: .utf8)
+            print("formattedString", formattedString)
+            
+            return highlightr!.highlight(formattedString!)
         } catch {
             print("data", bodyData)
             print("error", error.localizedDescription)
         }
         
-        return nil
+        return NSAttributedString(string:self.bodyData)
     }
 
     override func didReceiveMemoryWarning() {

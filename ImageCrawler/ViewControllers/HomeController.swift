@@ -19,9 +19,8 @@ class HomeController: UITabBarController {
         
         // Do any additional setup after loading the view.
         let item = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.refresh, target: self, action: #selector(HomeController.reset(sender:)))
-        let copyItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.add, target: self, action: #selector(HomeController.copy(sender:)))
         
-        navigationBar.rightBarButtonItems = [item, copyItem]
+        navigationBar.rightBarButtonItems = [item]
     }
     
     @objc func reset(sender: UINavigationItem) {
