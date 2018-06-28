@@ -16,8 +16,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "42EEC93C20DCCFFA0009A6AC"
-               BuildableName = "CrawlerTunnelProvider.appex"
-               BlueprintName = "CrawlerTunnelProvider"
+               BuildableName = "TunnelProvider.appex"
+               BlueprintName = "TunnelProvider"
                ReferencedContainer = "container:ImageCrawler.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -48,8 +48,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "42EEC93C20DCCFFA0009A6AC"
-            BuildableName = "CrawlerTunnelProvider.appex"
-            BlueprintName = "CrawlerTunnelProvider"
+            BuildableName = "TunnelProvider.appex"
+            BlueprintName = "TunnelProvider"
             ReferencedContainer = "container:ImageCrawler.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

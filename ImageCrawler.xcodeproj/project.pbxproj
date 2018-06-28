@@ -61,7 +61,7 @@
 		42EB235520CAB92F00994F74 /* Switch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42EB235420CAB92F00994F74 /* Switch.framework */; };
 		42EEC93820DC7B040009A6AC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EEC93720DC7B040009A6AC /* NetworkManager.swift */; };
 		42EEC94020DCCFFA0009A6AC /* PacketTunnelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EEC93F20DCCFFA0009A6AC /* PacketTunnelProvider.swift */; };
-		42EEC94520DCCFFA0009A6AC /* CrawlerTunnelProvider.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 42EEC93D20DCCFFA0009A6AC /* CrawlerTunnelProvider.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		42EEC94520DCCFFA0009A6AC /* TunnelProvider.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 42EEC93D20DCCFFA0009A6AC /* TunnelProvider.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		42EEC95120DCF5310009A6AC /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42EEC95020DCF5310009A6AC /* CocoaAsyncSocket.framework */; };
 		42EEC95420DCFA9D0009A6AC /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42EEC95320DCFA9D0009A6AC /* NetworkExtension.framework */; };
 /* End PBXBuildFile section */
@@ -146,7 +146,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				42EEC94520DCCFFA0009A6AC /* CrawlerTunnelProvider.appex in Embed App Extensions */,
+				42EEC94520DCCFFA0009A6AC /* TunnelProvider.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,10 +221,10 @@
 		42EB235320CA2F1F00994F74 /* ImageCrawler.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ImageCrawler.entitlements; sourceTree = "<group>"; };
 		42EB235420CAB92F00994F74 /* Switch.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Switch.framework; path = Carthage/Build/iOS/Switch.framework; sourceTree = "<group>"; };
 		42EEC93720DC7B040009A6AC /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		42EEC93D20DCCFFA0009A6AC /* CrawlerTunnelProvider.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CrawlerTunnelProvider.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		42EEC93D20DCCFFA0009A6AC /* TunnelProvider.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TunnelProvider.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		42EEC93F20DCCFFA0009A6AC /* PacketTunnelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacketTunnelProvider.swift; sourceTree = "<group>"; };
 		42EEC94120DCCFFA0009A6AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		42EEC94220DCCFFA0009A6AC /* CrawlerTunnelProvider.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CrawlerTunnelProvider.entitlements; sourceTree = "<group>"; };
+		42EEC94220DCCFFA0009A6AC /* TunnelProvider.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TunnelProvider.entitlements; sourceTree = "<group>"; };
 		42EEC95020DCF5310009A6AC /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = Carthage/Build/iOS/CocoaAsyncSocket.framework; sourceTree = "<group>"; };
 		42EEC95320DCFA9D0009A6AC /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -335,7 +335,7 @@
 				42DA4DA920C8C86E002D161F /* ImageCrawler */,
 				42DA4DC020C8C86F002D161F /* ImageCrawlerTests */,
 				42DA4DCB20C8C86F002D161F /* ImageCrawlerUITests */,
-				42EEC93E20DCCFFA0009A6AC /* CrawlerTunnelProvider */,
+				42EEC93E20DCCFFA0009A6AC /* TunnelProvider */,
 				42DA4DA820C8C86E002D161F /* Products */,
 				42DA4DDA20C8CA13002D161F /* Frameworks */,
 			);
@@ -347,7 +347,7 @@
 				42DA4DA720C8C86E002D161F /* ImageCrawler.app */,
 				42DA4DBD20C8C86F002D161F /* ImageCrawlerTests.xctest */,
 				42DA4DC820C8C86F002D161F /* ImageCrawlerUITests.xctest */,
-				42EEC93D20DCCFFA0009A6AC /* CrawlerTunnelProvider.appex */,
+				42EEC93D20DCCFFA0009A6AC /* TunnelProvider.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -421,15 +421,15 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		42EEC93E20DCCFFA0009A6AC /* CrawlerTunnelProvider */ = {
+		42EEC93E20DCCFFA0009A6AC /* TunnelProvider */ = {
 			isa = PBXGroup;
 			children = (
 				42427FFB20D39AF30053FA82 /* ProxyObserverFactory.swift */,
 				42EEC93F20DCCFFA0009A6AC /* PacketTunnelProvider.swift */,
 				42EEC94120DCCFFA0009A6AC /* Info.plist */,
-				42EEC94220DCCFFA0009A6AC /* CrawlerTunnelProvider.entitlements */,
+				42EEC94220DCCFFA0009A6AC /* TunnelProvider.entitlements */,
 			);
-			path = CrawlerTunnelProvider;
+			path = TunnelProvider;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -493,9 +493,9 @@
 			productReference = 42DA4DC820C8C86F002D161F /* ImageCrawlerUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		42EEC93C20DCCFFA0009A6AC /* CrawlerTunnelProvider */ = {
+		42EEC93C20DCCFFA0009A6AC /* TunnelProvider */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 42EEC94620DCCFFA0009A6AC /* Build configuration list for PBXNativeTarget "CrawlerTunnelProvider" */;
+			buildConfigurationList = 42EEC94620DCCFFA0009A6AC /* Build configuration list for PBXNativeTarget "TunnelProvider" */;
 			buildPhases = (
 				42EEC93920DCCFFA0009A6AC /* Sources */,
 				42EEC93A20DCCFFA0009A6AC /* Frameworks */,
@@ -506,9 +506,9 @@
 			dependencies = (
 				42C5E33020DE3BAE0011D42A /* PBXTargetDependency */,
 			);
-			name = CrawlerTunnelProvider;
+			name = TunnelProvider;
 			productName = CrawlerTunnelProvider;
-			productReference = 42EEC93D20DCCFFA0009A6AC /* CrawlerTunnelProvider.appex */;
+			productReference = 42EEC93D20DCCFFA0009A6AC /* TunnelProvider.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -584,7 +584,7 @@
 				42DA4DA620C8C86E002D161F /* ImageCrawler */,
 				42DA4DBC20C8C86F002D161F /* ImageCrawlerTests */,
 				42DA4DC720C8C86F002D161F /* ImageCrawlerUITests */,
-				42EEC93C20DCCFFA0009A6AC /* CrawlerTunnelProvider */,
+				42EEC93C20DCCFFA0009A6AC /* TunnelProvider */,
 			);
 		};
 /* End PBXProject section */
@@ -767,7 +767,7 @@
 		};
 		42EEC94420DCCFFA0009A6AC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 42EEC93C20DCCFFA0009A6AC /* CrawlerTunnelProvider */;
+			target = 42EEC93C20DCCFFA0009A6AC /* TunnelProvider */;
 			targetProxy = 42EEC94320DCCFFA0009A6AC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1041,7 +1041,7 @@
 		42EEC94720DCCFFA0009A6AC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = CrawlerTunnelProvider/CrawlerTunnelProvider.entitlements;
+				CODE_SIGN_ENTITLEMENTS = TunnelProvider/TunnelProvider.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S833P2K5YV;
@@ -1049,7 +1049,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = CrawlerTunnelProvider/Info.plist;
+				INFOPLIST_FILE = TunnelProvider/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1067,7 +1067,7 @@
 		42EEC94820DCCFFA0009A6AC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = CrawlerTunnelProvider/CrawlerTunnelProvider.entitlements;
+				CODE_SIGN_ENTITLEMENTS = TunnelProvider/TunnelProvider.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = S833P2K5YV;
@@ -1075,7 +1075,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = CrawlerTunnelProvider/Info.plist;
+				INFOPLIST_FILE = TunnelProvider/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1129,7 +1129,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		42EEC94620DCCFFA0009A6AC /* Build configuration list for PBXNativeTarget "CrawlerTunnelProvider" */ = {
+		42EEC94620DCCFFA0009A6AC /* Build configuration list for PBXNativeTarget "TunnelProvider" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				42EEC94720DCCFFA0009A6AC /* Debug */,

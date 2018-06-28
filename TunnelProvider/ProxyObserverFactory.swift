@@ -23,26 +23,22 @@ class ProxyTunnelObserver: Observer<TunnelEvent> {
     override open func signal(_ event: TunnelEvent) {
         switch event {
         case .proxySocketReadData(let data, let socket, let tunnel):
-            NSLog("tunnel id: \(ObjectIdentifier(tunnel).hashValue)")
-            NSLog("\(event)")
             manager.upsertRequest(data, socket, tunnel)
         case .adapterSocketReadData(let data, let socket, let tunnel):
-            NSLog("tunnel id: \(ObjectIdentifier(tunnel).hashValue)")
-            NSLog("\(event)")
             manager.upsertResponse(data, socket, tunnel)
         case .receivedRequest,
              .closed:
-            NSLog("\(event)")
+            break
         case .opened,
              .connectedToRemote,
              .updatingAdapterSocket:
-            NSLog("\(event)")
+            break
         case .closeCalled,
              .forceCloseCalled,
              .receivedReadySignal,
              .proxySocketWroteData,
              .adapterSocketWroteData:
-            NSLog("\(event)")
+            break
         }
     }
 }
@@ -51,11 +47,10 @@ class RecordManager  {
     
     
     func upsertResponse(_ data: Data, _ socket: AdapterSocket, _ tunnel: Tunnel) {
-        let dataString: String = String(data: data, encoding: .utf8)!
+        let dataString: String = String(data: data, encoding: .utf8) ?? ""
         
         let splits = dataString.components(separatedBy: "\r\n\r\n")
         if splits.count == 2 {
-            
             let tunnelId = extractTunnelId(tunnel)
             let realm = RealmUtil.get()
             let record = realm.objects(RequestRecord.self).filter("tunnelId = '\(tunnelId)'").first
@@ -64,7 +59,6 @@ class RecordManager  {
                     let responseEntity: ResponseEntity = ResponseEntity()
                     responseEntity.header = String(splits[0])
                     responseEntity.payload = String(splits[1])
-                    NSLog("-------------------\(splits)")
                     record.response = responseEntity
                 }
             }
@@ -76,7 +70,8 @@ class RecordManager  {
     }
     
     fileprivate func upsertRequest(_ data: Data, _ socket: ProxySocket, _ tunnel: Tunnel) {
-        let dataString = String(data: data,  encoding: .utf8)
+        
+        let dataString = String(data: data,  encoding: .utf8) ?? ""
         
         let realm = RealmUtil.get()
         let tunnelId = extractTunnelId(tunnel)
