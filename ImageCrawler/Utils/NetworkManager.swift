@@ -64,7 +64,8 @@ extension NetworkManager  {
                 if managers.count > 0 {
                     manager = managers[0]
                 }else{
-                    manager = self.createProviderManager()
+                    manager = NETunnelProviderManager()
+                    manager.protocolConfiguration = NETunnelProviderProtocol()
                 }
                 
                 let configuration = manager.protocolConfiguration as! NETunnelProviderProtocol
@@ -103,11 +104,5 @@ extension NetworkManager  {
             }
             complete(nil)
         }
-    }
-    
-    fileprivate func createProviderManager() -> NETunnelProviderManager {
-        let manager = NETunnelProviderManager()
-        manager.protocolConfiguration = NETunnelProviderProtocol()
-        return manager
     }
 }

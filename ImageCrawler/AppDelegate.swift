@@ -25,8 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         DDLog.add(DDTTYLogger.sharedInstance, with: .info)
         
         print("application")
-        NetworkManager().startVPN { (manager, error) in
-            return
+        let manager = NetworkManager()
+        manager.startVPN { (manager, error) in
+            print(error)
         }
         
         return true

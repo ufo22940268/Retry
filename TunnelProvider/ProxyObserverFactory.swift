@@ -45,8 +45,13 @@ class ProxyTunnelObserver: Observer<TunnelEvent> {
 
 class RecordManager  {
     
+    let dataThreshold = 1024*1024
     
     func upsertResponse(_ data: Data, _ socket: AdapterSocket, _ tunnel: Tunnel) {
+        guard data.count < dataThreshold else {
+            return
+        }
+        
         let dataString: String = String(data: data, encoding: .utf8) ?? ""
         
         let splits = dataString.components(separatedBy: "\r\n\r\n")
@@ -70,6 +75,9 @@ class RecordManager  {
     }
     
     fileprivate func upsertRequest(_ data: Data, _ socket: ProxySocket, _ tunnel: Tunnel) {
+        guard data.count < dataThreshold else {
+            return
+        }
         
         let dataString = String(data: data,  encoding: .utf8) ?? ""
         

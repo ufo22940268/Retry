@@ -53,7 +53,7 @@
                             <outlet property="delegate" destination="sAH-hh-xfr" id="mcf-oN-N9N"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Record" largeContentSizeImage="first" id="FI8-BB-zxh"/>
+                    <tabBarItem key="tabBarItem" title="请求记录" largeContentSizeImage="first" id="FI8-BB-zxh"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="table" destination="nn4-Py-mkp" id="s2B-qu-xhg"/>
@@ -244,11 +244,11 @@
             </objects>
             <point key="canvasLocation" x="-1050" y="0.0"/>
         </scene>
-        <!--Retry-->
+        <!--再试一次-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
                 <tabBarController id="49e-Tb-3d3" customClass="HomeController" customModule="ImageCrawler" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" title="Retry" id="BZW-Gw-401"/>
+                    <navigationItem key="navigationItem" title="再试一次" id="BZW-Gw-401"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -288,7 +288,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="zCd-5t-YH6"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Switcher" image="second" id="FJX-FD-Fvu"/>
+                    <tabBarItem key="tabBarItem" title="开关" id="FJX-FD-Fvu"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e3S-1M-R0h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -563,7 +563,6 @@
     </scenes>
     <resources>
         <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="J2u-Ov-pjI"/>
