@@ -70,7 +70,7 @@ extension NetworkManager  {
                 
                 let configuration = manager.protocolConfiguration as! NETunnelProviderProtocol
                 configuration.serverAddress = "ImageCrawler"
-                configuration.providerBundleIdentifier = "bettycc.com.ImageCrawler.CrawlerTunnelProvider"
+                configuration.providerBundleIdentifier = "com.bettycc.retry.tunnelprovider"
                 manager.isEnabled = true
                 manager.localizedDescription = "ImageCrawler"
                 

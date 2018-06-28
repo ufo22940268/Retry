@@ -11,7 +11,7 @@ import RealmSwift
 
 class RealmUtil {
     static func get() -> Realm  {
-        let sharedContainerURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.bettycc.com.ImageCrawler")!
+        let sharedContainerURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.bettycc.retry")!
         let realmURL = sharedContainerURL.appendingPathComponent("SharedRealm.realm")
         let config: Realm.Configuration = Realm.Configuration(fileURL: realmURL)
         Realm.Configuration.defaultConfiguration = config
