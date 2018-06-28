@@ -29,7 +29,9 @@ class SwitcherController: UIViewController {
         if off {
             networkManager.stop()
         } else {
-            networkManager.restart()
+            networkManager.startVPN { (manager, error) in
+                return
+            }
         }
     }
     

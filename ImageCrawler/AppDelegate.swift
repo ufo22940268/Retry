@@ -25,8 +25,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         DDLog.add(DDTTYLogger.sharedInstance, with: .info)
         
         print("application")
-        NetworkManager().restart()
-
+        NetworkManager().startVPN { (manager, error) in
+            return
+        }
+        
         return true
     }
     
@@ -55,7 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-
+        
     }
 
 }
