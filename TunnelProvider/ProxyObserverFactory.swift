@@ -67,12 +67,14 @@ class RecordManager  {
                     let responseEntity: ResponseEntity = ResponseEntity()
                     responseEntity.header = String(splits[0])
                     responseEntity.payload = String(splits[1])
+                    responseEntity.size += data.count
                     record.response = responseEntity
                 }
             } else {
                 try! realm.write {
                     if let res = record.response, let payload = record.response?.payload {
-                        record.response?.payload =  payload + dataString
+                        res.payload =  payload + dataString
+                        res.size += data.count
                     }
                 }
             }
@@ -103,7 +105,8 @@ class RecordManager  {
             } else if (httpSocket.readStatusDescription == "reading content (forwarding)") {
                 record.request?.payload = dataString
             }
-            
+            record.request?.size += data.count
+
             realm.add(record)
         }
     }

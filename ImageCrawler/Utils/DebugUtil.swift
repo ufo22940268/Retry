@@ -21,7 +21,7 @@ class DebugUtil {
         }
         
         
-        let source: URL = fileManager.containerURL(forSecurityApplicationGroupIdentifier: "group.com.bettycc.retry")!.appendingPathComponent("SharedRealm.realm")
+        let source: URL = fileManager.containerURL(forSecurityApplicationGroupIdentifier: "group.com.bettycc.retry")!.appendingPathComponent(RealmUtil.realmFileName)
         try! fileManager.copyItem(at: source, to: destination)
     }
 }

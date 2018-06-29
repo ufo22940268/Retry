@@ -12,6 +12,7 @@ import RealmSwift
 class HttpEntity:Object {
     @objc dynamic var header: String? = nil
     @objc dynamic var payload: String? = nil
+    @objc dynamic var size: Int = 0
     
     func parseHost() -> String {
         let headers = parseHeaders()
