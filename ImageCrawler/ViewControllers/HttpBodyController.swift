@@ -49,7 +49,7 @@ class HttpBodyController: UIViewController {
             let highlightr = Highlightr()
             highlightr?.setTheme(to: "solarized-light")
             
-            bodyData = bodyData.replacingOccurrences(of: "\\", with: "")
+//            bodyData = bodyData.replacingOccurrences(o`f: "\\", with: "")
             let d = bodyData.data(using: .utf8)
             let obj = try JSONSerialization.jsonObject(with: d!, options: .allowFragments)
             let jsonData = try JSONSerialization.data(withJSONObject: obj, options: .prettyPrinted)
