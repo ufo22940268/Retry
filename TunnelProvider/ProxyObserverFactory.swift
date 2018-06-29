@@ -53,18 +53,27 @@ class RecordManager  {
         }
         
         let dataString: String = String(data: data, encoding: .utf8) ?? ""
+
+        NSLog("response payload: \(dataString)")
+        let tunnelId = extractTunnelId(tunnel)
+        let realm = RealmUtil.get()
+        let record = realm.objects(RequestRecord.self).filter("tunnelId = '\(tunnelId)'").first
+        
         
         let splits = dataString.components(separatedBy: "\r\n\r\n")
-        if splits.count == 2 {
-            let tunnelId = extractTunnelId(tunnel)
-            let realm = RealmUtil.get()
-            let record = realm.objects(RequestRecord.self).filter("tunnelId = '\(tunnelId)'").first
-            if let record = record {
+        if let record = record {
+            if splits.count == 2 {
                 try! realm.write {
                     let responseEntity: ResponseEntity = ResponseEntity()
                     responseEntity.header = String(splits[0])
                     responseEntity.payload = String(splits[1])
                     record.response = responseEntity
+                }
+            } else {
+                try! realm.write {
+                    if let res = record.response, let payload = record.response?.payload {
+                        record.response?.payload =  payload + dataString
+                    }
                 }
             }
         }

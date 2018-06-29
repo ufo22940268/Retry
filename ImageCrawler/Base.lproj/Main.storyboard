@@ -53,7 +53,7 @@
                             <outlet property="delegate" destination="sAH-hh-xfr" id="mcf-oN-N9N"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="请求记录" largeContentSizeImage="first" id="FI8-BB-zxh"/>
+                    <tabBarItem key="tabBarItem" title="请求记录" image="_ionicons_svg_md-tv" largeContentSizeImage="first" id="FI8-BB-zxh"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="table" destination="nn4-Py-mkp" id="s2B-qu-xhg"/>
@@ -288,7 +288,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="zCd-5t-YH6"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="开关" id="FJX-FD-Fvu"/>
+                    <tabBarItem key="tabBarItem" title="开关" image="_ionicons_svg_ios-power" id="FJX-FD-Fvu"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e3S-1M-R0h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -562,6 +562,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="_ionicons_svg_ios-power" width="58" height="58"/>
+        <image name="_ionicons_svg_md-tv" width="58" height="58"/>
         <image name="first" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
