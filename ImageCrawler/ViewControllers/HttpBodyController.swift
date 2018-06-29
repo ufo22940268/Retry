@@ -21,17 +21,27 @@ class HttpBodyController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var text:NSAttributedString?
-        switch bodyType {
-        case .json:
-            text = formatJson()
-        default:
-            text = NSAttributedString(string: bodyData ?? "")
+        let background = DispatchQueue.global(qos:.background)
+ 
+        background.async {
+            var text:NSAttributedString?
+            switch self.bodyType {
+            case .json:
+                text = self.formatJson()
+            default:
+                text = NSAttributedString(string: self.bodyData ?? "")
+            }
+            
+            DispatchQueue.main.async {
+                if let text = text {
+                    self.body.attributedText = text
+                }
+            }
         }
-        
-        if let text = text {
-            body.attributedText = text
-        }
+
+//        if let text = text {
+//            body.attributedText = text
+//        }
     }
     
     func setType(contentType: String) {
@@ -49,14 +59,12 @@ class HttpBodyController: UIViewController {
             let highlightr = Highlightr()
             highlightr?.setTheme(to: "solarized-light")
             
-//            bodyData = bodyData.replacingOccurrences(o`f: "\\", with: "")
             let d = bodyData.data(using: .utf8)
             let obj = try JSONSerialization.jsonObject(with: d!, options: .allowFragments)
             let jsonData = try JSONSerialization.data(withJSONObject: obj, options: .prettyPrinted)
             let formattedString = String(bytes: jsonData, encoding: .utf8)
-            print("formattedString", formattedString)
             
-            return highlightr!.highlight(formattedString!)
+            return highlightr!.highlight(formattedString!, as: "json", fastRender: true)
         } catch {
             print("data", bodyData)
             print("error", error.localizedDescription)

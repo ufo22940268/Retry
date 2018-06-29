@@ -272,10 +272,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FHq-TM-UcO" customClass="Switch" customModule="Switch">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FHq-TM-UcO" customClass="Switch" customModule="Switch">
                                 <rect key="frame" x="67" y="237" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="3N8-Mz-c6d"/>
+                                    <constraint firstAttribute="height" constant="128" id="Gmv-NG-DeS"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="leftText" value="On"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="rightText" value="Off"/>
@@ -286,6 +289,10 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="FHq-TM-UcO" firstAttribute="centerY" secondItem="k6C-yZ-wE1" secondAttribute="centerY" id="4ME-qK-ogT"/>
+                            <constraint firstItem="FHq-TM-UcO" firstAttribute="centerX" secondItem="k6C-yZ-wE1" secondAttribute="centerX" id="pVV-fN-Tmq"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="zCd-5t-YH6"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="开关" image="_ionicons_svg_ios-power" id="FJX-FD-Fvu"/>
@@ -430,8 +437,8 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rFx-Q2-2Qz">
                                 <rect key="frame" x="0.0" y="20" width="375" height="514"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2iT-Tp-oWq">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="20.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2iT-Tp-oWq">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
