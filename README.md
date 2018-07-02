@@ -3,7 +3,11 @@
 
 中文名: 再试一次
 
+抓包工具,可以抓其他 app 的 http 的包. 使用 NetworkExtension 来配置代理,使用 NEKit 来启动 Http Proxy Server
 
-> 当猴子们开发的 app 运行出错的时候, 猴子们应该有再试一次的机会, 而且应该是优雅地, 轻松的"再试一次"
+## 截图
+
+![](./art/1.png)
+![](./art/2.png)
 
 
