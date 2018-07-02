@@ -4,4 +4,6 @@ github "zhuhaow/NEKit" "master"
 github "realm/realm-cocoa"
 github "malcommac/SwiftDate"
 github "raspu/Highlightr"
+github "SwiftyJSON/SwiftyJSON" ~> 4.0
+
 

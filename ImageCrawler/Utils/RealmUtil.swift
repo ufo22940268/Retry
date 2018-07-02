@@ -15,6 +15,7 @@ class RealmUtil {
     static func get() -> Realm  {
 
         let sharedContainerURL = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.com.bettycc.retry")!
+        print("--------------share directory", sharedContainerURL)
         let realmURL = sharedContainerURL.appendingPathComponent(realmFileName)
         let config: Realm.Configuration = Realm.Configuration(fileURL: realmURL)
         Realm.Configuration.defaultConfiguration = config

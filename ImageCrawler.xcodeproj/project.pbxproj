@@ -12,10 +12,14 @@
 		421EB72920D8CF5A00B05640 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 421EB72820D8CF5A00B05640 /* RealmSwift.framework */; };
 		421EB72B20D8CF8B00B05640 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 421EB72A20D8CF8B00B05640 /* Realm.framework */; };
 		421EB72E20D8D26F00B05640 /* RequestRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421EB72D20D8D26F00B05640 /* RequestRecord.swift */; };
+		423838E220E63CC8008AE7A8 /* HarProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423838E120E63CC8008AE7A8 /* HarProvider.swift */; };
+		423838E420E6FBCB008AE7A8 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 423838E320E6FBCB008AE7A8 /* SwiftyJSON.framework */; };
 		4256260B20DFAF320033E0A8 /* DebugUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4256260A20DFAF320033E0A8 /* DebugUtil.swift */; };
 		428CF3BB20DB4CC6009D90A2 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428CF3BA20DB4CC6009D90A2 /* HomeController.swift */; };
 		428CF3C120DB90F8009D90A2 /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428CF3C020DB90F8009D90A2 /* DetailController.swift */; };
 		428CF3C420DB97A1009D90A2 /* DetailContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428CF3C320DB97A1009D90A2 /* DetailContentCell.swift */; };
+		42A18C3B20E99E1E00DD4AA5 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A18C3A20E99E1E00DD4AA5 /* NetworkExtension.framework */; };
+		42A18C3C20E99ED400DD4AA5 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A18C3A20E99E1E00DD4AA5 /* NetworkExtension.framework */; };
 		42AB61B020E0ED8F007EEA69 /* SummarySegmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AB61AF20E0ED8F007EEA69 /* SummarySegmentController.swift */; };
 		42AB61B620E10BF1007EEA69 /* SwiftDate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42AB61B520E10BF1007EEA69 /* SwiftDate.framework */; };
 		42AB61B820E1161B007EEA69 /* RequestSegmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AB61B720E1161B007EEA69 /* RequestSegmentController.swift */; };
@@ -23,8 +27,6 @@
 		42AB61BE20E218B9007EEA69 /* ResponseSegmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AB61BD20E218B9007EEA69 /* ResponseSegmentController.swift */; };
 		42AB61C020E231F2007EEA69 /* Highlightr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42AB61BF20E231F2007EEA69 /* Highlightr.framework */; };
 		42AB61C220E2473B007EEA69 /* SwitcherController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AB61C120E2473B007EEA69 /* SwitcherController.swift */; };
-		42AB61CA20E49AB7007EEA69 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42EEC95320DCFA9D0009A6AC /* NetworkExtension.framework */; };
-		42AB61CC20E49ABC007EEA69 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42AB61CB20E49ABC007EEA69 /* StoreKit.framework */; };
 		42AB61E220E4C3D9007EEA69 /* NEKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E68EC320D3177900E715DE /* NEKit.framework */; };
 		42AB61E320E4C56A007EEA69 /* MMDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42E68EC820D318C300E715DE /* MMDB.framework */; };
 		42AB61E420E4C5A4007EEA69 /* CocoaLumberjackSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42AB61DB20E4A8AA007EEA69 /* CocoaLumberjackSwift.framework */; };
@@ -55,7 +57,6 @@
 		42EEC94020DCCFFA0009A6AC /* PacketTunnelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EEC93F20DCCFFA0009A6AC /* PacketTunnelProvider.swift */; };
 		42EEC94520DCCFFA0009A6AC /* TunnelProvider.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 42EEC93D20DCCFFA0009A6AC /* TunnelProvider.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		42EEC95120DCF5310009A6AC /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42EEC95020DCF5310009A6AC /* CocoaAsyncSocket.framework */; };
-		42EEC95420DCFA9D0009A6AC /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42EEC95320DCFA9D0009A6AC /* NetworkExtension.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,11 +146,14 @@
 		421EB72820D8CF5A00B05640 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		421EB72A20D8CF8B00B05640 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
 		421EB72D20D8D26F00B05640 /* RequestRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestRecord.swift; sourceTree = "<group>"; };
+		423838E120E63CC8008AE7A8 /* HarProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HarProvider.swift; sourceTree = "<group>"; };
+		423838E320E6FBCB008AE7A8 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		42427FFB20D39AF30053FA82 /* ProxyObserverFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProxyObserverFactory.swift; sourceTree = "<group>"; };
 		4256260A20DFAF320033E0A8 /* DebugUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugUtil.swift; sourceTree = "<group>"; };
 		428CF3BA20DB4CC6009D90A2 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		428CF3C020DB90F8009D90A2 /* DetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
 		428CF3C320DB97A1009D90A2 /* DetailContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailContentCell.swift; sourceTree = "<group>"; };
+		42A18C3A20E99E1E00DD4AA5 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 		42AB61AF20E0ED8F007EEA69 /* SummarySegmentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummarySegmentController.swift; sourceTree = "<group>"; };
 		42AB61B520E10BF1007EEA69 /* SwiftDate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftDate.framework; path = Carthage/Build/iOS/SwiftDate.framework; sourceTree = "<group>"; };
 		42AB61B720E1161B007EEA69 /* RequestSegmentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestSegmentController.swift; sourceTree = "<group>"; };
@@ -157,7 +161,6 @@
 		42AB61BD20E218B9007EEA69 /* ResponseSegmentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseSegmentController.swift; sourceTree = "<group>"; };
 		42AB61BF20E231F2007EEA69 /* Highlightr.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Highlightr.framework; path = Carthage/Build/iOS/Highlightr.framework; sourceTree = "<group>"; };
 		42AB61C120E2473B007EEA69 /* SwitcherController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitcherController.swift; sourceTree = "<group>"; };
-		42AB61CB20E49ABC007EEA69 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		42AB61D920E4A8A9007EEA69 /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = Carthage/Build/iOS/CocoaAsyncSocket.framework; sourceTree = "<group>"; };
 		42AB61DA20E4A8AA007EEA69 /* CocoaLumberjack.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjack.framework; path = Carthage/Build/iOS/CocoaLumberjack.framework; sourceTree = "<group>"; };
 		42AB61DB20E4A8AA007EEA69 /* CocoaLumberjackSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjackSwift.framework; path = Carthage/Build/iOS/CocoaLumberjackSwift.framework; sourceTree = "<group>"; };
@@ -192,7 +195,6 @@
 		42EEC94120DCCFFA0009A6AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42EEC94220DCCFFA0009A6AC /* TunnelProvider.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TunnelProvider.entitlements; sourceTree = "<group>"; };
 		42EEC95020DCF5310009A6AC /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = Carthage/Build/iOS/CocoaAsyncSocket.framework; sourceTree = "<group>"; };
-		42EEC95320DCFA9D0009A6AC /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,12 +202,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				423838E420E6FBCB008AE7A8 /* SwiftyJSON.framework in Frameworks */,
 				42AB61E220E4C3D9007EEA69 /* NEKit.framework in Frameworks */,
 				42AB61C020E231F2007EEA69 /* Highlightr.framework in Frameworks */,
 				42AB61B620E10BF1007EEA69 /* SwiftDate.framework in Frameworks */,
-				42AB61CA20E49AB7007EEA69 /* NetworkExtension.framework in Frameworks */,
 				42EB235520CAB92F00994F74 /* Switch.framework in Frameworks */,
-				42AB61CC20E49ABC007EEA69 /* StoreKit.framework in Frameworks */,
 				421EB72920D8CF5A00B05640 /* RealmSwift.framework in Frameworks */,
 				42DA4DDC20C8CA13002D161F /* Kingfisher.framework in Frameworks */,
 				42AB61E320E4C56A007EEA69 /* MMDB.framework in Frameworks */,
@@ -214,6 +215,7 @@
 				42AB61E520E4C64B007EEA69 /* CocoaAsyncSocket.framework in Frameworks */,
 				42AB61E620E4C64B007EEA69 /* CocoaLumberjack.framework in Frameworks */,
 				42AB61E920E4C6E7007EEA69 /* lwip.framework in Frameworks */,
+				42A18C3B20E99E1E00DD4AA5 /* NetworkExtension.framework in Frameworks */,
 				42AB61E720E4C64B007EEA69 /* Resolver.framework in Frameworks */,
 				42AB61EA20E4C6E7007EEA69 /* tun2socks.framework in Frameworks */,
 				42AB61EB20E4C6E7007EEA69 /* Yaml.framework in Frameworks */,
@@ -240,9 +242,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				42C5E33B20DE73490011D42A /* NEKit.framework in Frameworks */,
+				42A18C3C20E99ED400DD4AA5 /* NetworkExtension.framework in Frameworks */,
 				42EEC95120DCF5310009A6AC /* CocoaAsyncSocket.framework in Frameworks */,
 				42C5E33620DE3D410011D42A /* Realm.framework in Frameworks */,
-				42EEC95420DCFA9D0009A6AC /* NetworkExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,10 +360,10 @@
 		42DA4DDA20C8CA13002D161F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				42AB61CB20E49ABC007EEA69 /* StoreKit.framework */,
+				42A18C3A20E99E1E00DD4AA5 /* NetworkExtension.framework */,
+				423838E320E6FBCB008AE7A8 /* SwiftyJSON.framework */,
 				42AB61BF20E231F2007EEA69 /* Highlightr.framework */,
 				42AB61B520E10BF1007EEA69 /* SwiftDate.framework */,
-				42EEC95320DCFA9D0009A6AC /* NetworkExtension.framework */,
 				42EEC95020DCF5310009A6AC /* CocoaAsyncSocket.framework */,
 				421EB72A20D8CF8B00B05640 /* Realm.framework */,
 				421EB72820D8CF5A00B05640 /* RealmSwift.framework */,
@@ -386,6 +388,7 @@
 				42C5E33720DE6D7E0011D42A /* RealmUtil.swift */,
 				4256260A20DFAF320033E0A8 /* DebugUtil.swift */,
 				42C891C420E0946100CB24A2 /* TableSegment.swift */,
+				423838E120E63CC8008AE7A8 /* HarProvider.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -495,7 +498,7 @@
 								enabled = 1;
 							};
 							com.apple.InAppPurchase = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.Keychain = {
 								enabled = 1;
@@ -504,7 +507,7 @@
 								enabled = 1;
 							};
 							com.apple.VPNLite = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -526,7 +529,7 @@
 								enabled = 1;
 							};
 							com.apple.VPNLite = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
@@ -654,6 +657,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/tun2socks.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Yaml.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Sodium.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
 			);
 			name = "Run Script";
 			outputPaths = (
@@ -673,6 +677,7 @@
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/tun2socks.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Yaml.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/Sodium.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -691,6 +696,7 @@
 				4256260B20DFAF320033E0A8 /* DebugUtil.swift in Sources */,
 				42AB61B820E1161B007EEA69 /* RequestSegmentController.swift in Sources */,
 				428CF3C420DB97A1009D90A2 /* DetailContentCell.swift in Sources */,
+				423838E220E63CC8008AE7A8 /* HarProvider.swift in Sources */,
 				420446AF20DA3F6300ABDF31 /* RecordController.swift in Sources */,
 				42C891CF20E0ECF900CB24A2 /* SegmentController.swift in Sources */,
 				428CF3BB20DB4CC6009D90A2 /* HomeController.swift in Sources */,
